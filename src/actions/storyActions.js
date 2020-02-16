@@ -11,7 +11,7 @@ export const getData = query => {
       .get(`https://refugee-stories-api-082019.herokuapp.com/api/public`)
       .then(res => {
         // res.data.data
-
+        // comment
         dispatch({ type: FETCH_STORY_DATA_SUCCESS, payload: res });
       })
       .catch(err => {
