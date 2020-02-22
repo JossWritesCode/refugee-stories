@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const cherryPink = '#C96567';
-const mineralBlue = '#0f0f33';
+const mineralBlue = '#03002e';
 const lightBlue = '#97aabd';
 
 export default createMuiTheme({

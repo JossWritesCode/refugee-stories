@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Logo from '../assets/pink-logo.png';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,6 +18,17 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1
+  },
+  logo: {
+    width: '75px'
+  },
+  toolbar: {
+    justifyContent: 'space-between',
+    display: 'flex'
+  },
+  box: {
+    display: 'flex',
+    alignItems: 'center'
   }
 }));
 
@@ -25,7 +38,11 @@ export default function ButtonAppBar() {
   return (
     <div className={classes.root}>
       <AppBar position="fixed">
-        <Toolbar>
+        <Toolbar className={classes.toolbar}>
+          <Box className={classes.box}>
+            <img className={classes.logo} src={Logo} alt="logo" />
+            <Typography>Refugee Stories</Typography>
+          </Box>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -34,10 +51,6 @@ export default function ButtonAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Refugee Stories
-          </Typography>
-          <Button color="inherit">Admin</Button>
         </Toolbar>
       </AppBar>
     </div>
