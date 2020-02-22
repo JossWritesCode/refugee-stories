@@ -14,7 +14,8 @@ import {
 } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    width: '100%'
   },
   menuButton: {
     marginRight: theme.spacing(2)
@@ -49,7 +50,7 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar position="static">
         <Toolbar className={classes.toolbar}>
           <Box className={classes.box}>
             <img className={classes.logo} src={Logo} alt="logo" />

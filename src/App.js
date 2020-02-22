@@ -4,6 +4,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './components/ui/Theme';
+import LandingPage from './components/LandingPage.js';
+import './index.css';
 //components
 
 //contexts
@@ -11,7 +13,7 @@ import theme from './components/ui/Theme';
 function App() {
   return (
     <ThemeProvider theme={theme} className="App">
-      <NavBar />
+      <LandingPage />
     </ThemeProvider>
   );
 }
