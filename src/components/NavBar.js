@@ -6,7 +6,6 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  Button,
   IconButton,
   Box,
   Menu,
@@ -61,12 +60,9 @@ export default function ButtonAppBar() {
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
+            onClick={handleClick}
           >
-            <MenuIcon
-              aria-controls="simple-menu"
-              aria-haspopup="true"
-              onClick={handleClick}
-            />
+            <MenuIcon aria-controls="simple-menu" aria-haspopup="true" />
             <Menu
               id="simple-menu"
               anchorEl={anchorEl}
@@ -74,9 +70,9 @@ export default function ButtonAppBar() {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleClose}>Share your story</MenuItem>
-              <MenuItem onClick={handleClose}>About us</MenuItem>
-              <MenuItem onClick={handleClose}>Admin</MenuItem>
+              <MenuItem>Share your story</MenuItem>
+              <MenuItem>About us</MenuItem>
+              <MenuItem>Admin</MenuItem>
             </Menu>
           </IconButton>
         </Toolbar>

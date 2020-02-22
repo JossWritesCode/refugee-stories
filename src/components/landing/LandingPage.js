@@ -1,9 +1,10 @@
 import React from 'react';
-import HeroImage from '../assets/humanitarian-aid.svg';
+import HeroImage from '../../assets/humanitarian-aid.svg';
 import { makeStyles } from '@material-ui/core/styles';
-import NavBar from './NavBar.js';
+import NavBar from '../NavBar.js';
 import { Typography, Button } from '@material-ui/core';
-import Footer from './Footer.js';
+import Footer from '../Footer.js';
+import TheirStories from './TheirStories.js';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -30,16 +31,13 @@ export default function LandingPage() {
         <Button variant="contained" color="secondary">
           Share Your Story
         </Button>
-        <Typography
-          className={classes.headerSecondary}
-          variant="p"
-          component="p"
-        >
+        <Typography className={classes.headerSecondary} component="p">
           “Could a greater miracle take place than for us to look through each
           other’s eye for an instant?” - Henry David Thoreau
         </Typography>
         <img className={classes.heroimage} src={HeroImage} alt="hero" />
       </div>
+      <TheirStories />
       <Footer />
     </div>
   );

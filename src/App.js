@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import NavBar from './components/NavBar';
+import React from 'react';
+// import { Route } from 'react-router-dom';
+// import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './components/ui/Theme';
-import LandingPage from './components/LandingPage.js';
+import LandingPage from './components/landing/LandingPage.js';
 import './index.css';
 //components
 
@@ -12,7 +11,7 @@ import './index.css';
 
 function App() {
   return (
-    <ThemeProvider theme={theme} className="App">
+    <ThemeProvider theme={theme}>
       <LandingPage />
     </ThemeProvider>
   );

@@ -12,7 +12,6 @@ html {
 }
 
 .hero-section {
-  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,4 +23,12 @@ html {
 
 .hero-section button {
   margin: 1rem;
+}
+
+.stories-container {
+  width: 99vw;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
