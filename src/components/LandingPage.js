@@ -3,6 +3,7 @@ import HeroImage from '../assets/humanitarian-aid.svg';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from './NavBar.js';
 import { Typography, Button } from '@material-ui/core';
+import Footer from './Footer.js';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -37,9 +38,9 @@ export default function LandingPage() {
           “Could a greater miracle take place than for us to look through each
           other’s eye for an instant?” - Henry David Thoreau
         </Typography>
-
         <img className={classes.heroimage} src={HeroImage} alt="hero" />
       </div>
+      <Footer />
     </div>
   );
 }
