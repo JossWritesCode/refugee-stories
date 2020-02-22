@@ -1,7 +1,7 @@
 import {
   FETCH_STORY_DATA_START,
-  FETCH_STORY_DATA_SUCCESS
-  // FETCH_STORY_DATA_FAILURE,
+  FETCH_STORY_DATA_SUCCESS,
+  FETCH_STORY_DATA_FAILURE
 } from '../actions';
 
 const initialState = {
@@ -22,9 +22,14 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        consolidated_weather: action.payload.stories,
-        title: action.payload.title,
+        stories: action.payload.data,
         error: false
+      };
+    case FETCH_STORY_DATA_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: true
       };
 
     default:
