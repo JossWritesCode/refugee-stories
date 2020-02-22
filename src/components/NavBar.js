@@ -1,14 +1,17 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Logo from '../assets/pink-logo.png';
-import Box from '@material-ui/core/Box';
-
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Box,
+  Menu,
+  MenuItem
+} from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -34,6 +37,15 @@ const useStyles = makeStyles(theme => ({
 
 export default function ButtonAppBar() {
   const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className={classes.root}>
@@ -49,7 +61,22 @@ export default function ButtonAppBar() {
             color="inherit"
             aria-label="menu"
           >
-            <MenuIcon />
+            <MenuIcon
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleClick}
+            />
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>Share your story</MenuItem>
+              <MenuItem onClick={handleClose}>About us</MenuItem>
+              <MenuItem onClick={handleClose}>Admin</MenuItem>
+            </Menu>
           </IconButton>
         </Toolbar>
       </AppBar>
