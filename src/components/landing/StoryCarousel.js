@@ -1,21 +1,19 @@
 import React, { useEffect } from 'react';
 import { Carousel } from 'antd';
-import { getData } from '../../actions';
+import { getStories } from '../../actions';
 import { connect } from 'react-redux';
 import Story from './Story.js';
 import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
-function StoryCarousel(props) {
+function StoryCarousel({ stories, getStories }) {
   useEffect(() => {
-    if (props.stories.length === 0) {
-      props.getData();
+    getStories();
 
-      console.log('CALLING THE API');
-    }
-  }, []);
+    console.log('CALLING THE API');
+  }, [getStories]);
 
-  const stories = props.stories.slice(0, 4);
+  const recentStories = stories.slice(0, 4);
   return (
     <div className="carousel-container">
       <Link to="/stories">
@@ -24,7 +22,7 @@ function StoryCarousel(props) {
         </Typography>
       </Link>
       <Carousel autoplay id="carousel">
-        {stories.map(story => (
+        {recentStories.map(story => (
           <Story key={story.id} story={story} />
         ))}
       </Carousel>
@@ -38,4 +36,4 @@ const mapStateToProps = state => {
     error: state.error
   };
 };
-export default connect(mapStateToProps, { getData })(StoryCarousel);
+export default connect(mapStateToProps, { getStories })(StoryCarousel);

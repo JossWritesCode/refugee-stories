@@ -1,27 +1,28 @@
 import React, { useEffect } from 'react';
-import { getData } from '../../actions';
+import { getStory } from '../../actions';
 import { connect } from 'react-redux';
+import NavBar from '../NavBar.js';
+import Footer from '../Footer.js';
+import { Typography } from '@material-ui/core';
 
-function StoryRoute(props) {
-  let thisStory;
+function StoryRoute({ story, getStory, match }) {
   useEffect(() => {
-    if (props.stories.length === 0) {
-      props.getData();
+    getStory(match.params.id);
+    console.log('CALLING THE API');
+  }, [getStory, match.params.id]);
 
-      console.log('CALLING THE API');
-    }
-    for (let i = 0; i < props.stories.length; i++) {
-      if (props.stories[i].id === storyId) {
-        thisStory = props.stories[i];
-      }
-    }
-  }, []);
-
-  const storyId = props.match.params.id;
-
+  console.log();
   return (
     <div>
-      <h4>{thisStory.title}</h4>
+      <NavBar />
+      <div className="story-container">
+        <Typography variant="h3" component="h3">
+          {story.title}
+        </Typography>
+        <img className="story-picture" src={story.imageUrl} alt="author" />
+        <Typography className="story-text">{story.story}</Typography>
+      </div>
+      <Footer />
     </div>
   );
 }
@@ -30,7 +31,8 @@ const mapStateToProps = state => {
   return {
     isLoading: state.isLoading,
     stories: state.stories,
+    story: state.story,
     error: state.error
   };
 };
-export default connect(mapStateToProps, { getData })(StoryRoute);
+export default connect(mapStateToProps, { getStory })(StoryRoute);

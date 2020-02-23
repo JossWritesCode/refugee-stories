@@ -1,0 +1,52 @@
+.story-text {
+  width: 300px;
+  margin: 2rem 0 !important;
+
+  @media (min-width: 700px) {
+    width: 600px;
+    margin: 2rem 0;
+  }
+}
+
+.story-picture {
+  margin: 2rem;
+  width: 300px;
+
+  @media (min-width: 700px) {
+    width: 500px;
+  }
+}
+
+.stories-container #story {
+  max-width: 300px;
+  margin: 1rem;
+  height: 200px;
+}
+.main-their-stories {
+  margin: 7rem 1rem;
+}
+
+.stories-header {
+  text-align: center;
+}
+
+.stories-header:hover {
+  color: #c96567;
+}
+
+.stories-container {
+  width: 99vw;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-container {
+  width: 99vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5rem 0 !important;
+}

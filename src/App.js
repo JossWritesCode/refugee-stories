@@ -5,7 +5,8 @@ import theme from './components/ui/Theme';
 import { Switch, Route } from 'react-router-dom';
 import LandingPage from './components/landing/LandingPage.js';
 import TheirStories from './components/landing/TheirStories.js';
-import './index.css';
+
+import './SCSS/main.scss';
 import StoryRoute from './components/landing/StoryRoute.js';
 //components
 
