@@ -35,7 +35,9 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
           <Box className={classes.box}>
-            <img className={classes.logo} src={Logo} alt="logo" />
+            <Link to="/">
+              <img className={classes.logo} src={Logo} alt="logo" />
+            </Link>
             <Link to="/">
               <Typography className="stories-header">
                 Refugee Stories
