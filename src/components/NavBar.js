@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import Logo from '../assets/pink-logo.png';
+import { Link } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -53,7 +54,11 @@ export default function ButtonAppBar() {
         <Toolbar className={classes.toolbar}>
           <Box className={classes.box}>
             <img className={classes.logo} src={Logo} alt="logo" />
-            <Typography>Refugee Stories</Typography>
+            <Link to="/">
+              <Typography className="stories-header">
+                Refugee Stories
+              </Typography>
+            </Link>
           </Box>
           <IconButton
             edge="start"

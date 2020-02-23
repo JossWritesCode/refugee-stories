@@ -10,9 +10,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
-    height: '30rem',
-    margin: '1rem'
+    // width: '500px'
   }
 });
 
@@ -20,7 +18,7 @@ export default function Story(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card id="story" className={classes.root}>
       <CardActionArea>
         <CardMedia
           component="img"

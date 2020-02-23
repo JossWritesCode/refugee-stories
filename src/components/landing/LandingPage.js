@@ -1,10 +1,11 @@
 import React from 'react';
-import HeroImage from '../../assets/humanitarian-aid.svg';
+// import HeroImage from '../../assets/humanitarian-aid.svg';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from '../NavBar.js';
 import { Typography, Button } from '@material-ui/core';
 import Footer from '../Footer.js';
-import TheirStories from './TheirStories.js';
+
+import StoryCarousel from './StoryCarousel.js';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -35,9 +36,10 @@ export default function LandingPage() {
           “Could a greater miracle take place than for us to look through each
           other’s eye for an instant?” - Henry David Thoreau
         </Typography>
-        <img className={classes.heroimage} src={HeroImage} alt="hero" />
+        {/* <img className={classes.heroimage} src={HeroImage} alt="hero" /> */}
       </div>
-      <TheirStories />
+      {/* <TheirStories /> */}
+      <StoryCarousel />
       <Footer />
     </div>
   );
