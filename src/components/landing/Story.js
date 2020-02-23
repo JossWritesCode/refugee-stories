@@ -18,7 +18,7 @@ export default function Story(props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Card id="story" className={classes.root}>
       <CardActionArea>
         <CardMedia
           component="img"

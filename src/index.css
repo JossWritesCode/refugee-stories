@@ -11,6 +11,11 @@ html {
   font-size: 62.5%;
 }
 
+* {
+  text-decoration: none;
+  color: inherit;
+}
+
 .hero-section {
   display: flex;
   flex-direction: column;
@@ -35,6 +40,15 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.stories-container #story {
+  max-width: 300px;
+  margin: 1rem;
+  height: 200px;
+}
+.main-their-stories {
+  margin: 7rem 1rem;
 }
 
 .ant-carousel {
@@ -62,4 +76,8 @@ html {
 
 .stories-header {
   text-align: center;
+}
+
+.stories-header:hover {
+  color: #c96567;
 }

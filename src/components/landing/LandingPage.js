@@ -1,10 +1,10 @@
 import React from 'react';
-import HeroImage from '../../assets/humanitarian-aid.svg';
+// import HeroImage from '../../assets/humanitarian-aid.svg';
 import { makeStyles } from '@material-ui/core/styles';
 import NavBar from '../NavBar.js';
 import { Typography, Button } from '@material-ui/core';
 import Footer from '../Footer.js';
-// import TheirStories from './TheirStories.js';
+
 import StoryCarousel from './StoryCarousel.js';
 const useStyles = makeStyles(theme => ({
   root: {
