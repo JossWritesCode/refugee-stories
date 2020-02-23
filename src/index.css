@@ -25,10 +25,41 @@ html {
   margin: 1rem;
 }
 
+.carousel-container {
+  margin: 5rem 0;
+}
+
 .stories-container {
   width: 99vw;
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.ant-carousel {
+  width: 300px !important;
+  height: 500px;
+  margin: 0 auto;
+}
+@media (min-width: 700px) {
+  .ant-carousel {
+    width: 500px !important;
+  }
+}
+
+.ant-carousel .slick-slide {
+  margin: 0 auto;
+  text-align: center;
+  line-height: 160px;
+  background: #c96567;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.stories-header {
+  text-align: center;
 }
