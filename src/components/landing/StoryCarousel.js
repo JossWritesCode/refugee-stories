@@ -8,11 +8,12 @@ import { Link } from 'react-router-dom';
 
 function StoryCarousel(props) {
   useEffect(() => {
-    props.getData();
+    if (props.stories.length === 0) {
+      props.getData();
+
+      console.log('CALLING THE API');
+    }
   }, []);
-  function onChange(a, b, c) {
-    console.log(a, b, c);
-  }
 
   const stories = props.stories.slice(0, 4);
   return (
@@ -22,7 +23,7 @@ function StoryCarousel(props) {
           Their Stories
         </Typography>
       </Link>
-      <Carousel autoplay id="carousel" afterChange={onChange}>
+      <Carousel autoplay id="carousel">
         {stories.map(story => (
           <Story key={story.id} story={story} />
         ))}

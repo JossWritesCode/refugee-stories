@@ -20,7 +20,11 @@ function TheirStories(props) {
   const classes = useStyles();
 
   useEffect(() => {
-    props.getData();
+    if (props.stories.length === 0) {
+      props.getData();
+
+      console.log('CALLING THE API');
+    }
   }, []);
 
   return (
