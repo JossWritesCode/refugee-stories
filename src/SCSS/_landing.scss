@@ -1,0 +1,43 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    padding: 1rem;
+    text-align: center;
+  }
+  button {
+    margin: 1rem;
+  }
+}
+
+.landing-page main {
+  padding: 2rem;
+}
+
+.carousel-container {
+  margin: 5rem 0;
+
+  .ant-carousel {
+    width: 300px !important;
+    height: 337px;
+    margin: 0 auto;
+
+    @media (min-width: 700px) {
+      width: 500px !important;
+    }
+
+    .slick-slide {
+      margin: 0 auto;
+      text-align: center;
+      line-height: 160px;
+      background: #c96567;
+      overflow: hidden;
+
+      h3 {
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Loader from 'react-loader-spinner';
-import { getData } from '../../actions';
+import { getStories } from '../../actions';
 import { connect } from 'react-redux';
 import Story from './Story.js';
 import { Typography } from '@material-ui/core';
@@ -16,12 +16,14 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center'
   }
 }));
-function TheirStories(props) {
+function TheirStories({ stories, getStories, error, isLoading }) {
   const classes = useStyles();
-
   useEffect(() => {
-    props.getData();
-  }, []);
+    if (stories.length === 0) {
+      getStories();
+      console.log('CALLING THE API');
+    }
+  }, [getStories, stories.length]);
 
   return (
     <div className="their-stories">
@@ -30,15 +32,15 @@ function TheirStories(props) {
         <Typography className={classes.title} variant="h3">
           Their Stories
         </Typography>
-        {props.error ? <p className="error">Error</p> : ''}
-        {props.isLoading ? (
+        {error ? <p className="error">Error</p> : ''}
+        {isLoading ? (
           <Loader type="TailSpin" color="#00BFFF" height={100} width={100} />
         ) : (
           ''
         )}
 
         <div className="stories-container">
-          {props.stories.map(story => (
+          {stories.map(story => (
             <Story key={story.id} story={story} />
           ))}
         </div>
@@ -55,4 +57,4 @@ const mapStateToProps = state => {
     error: state.error
   };
 };
-export default connect(mapStateToProps, { getData })(TheirStories);
+export default connect(mapStateToProps, { getStories })(TheirStories);

@@ -5,13 +5,14 @@ import theme from './components/ui/Theme';
 import { Switch, Route } from 'react-router-dom';
 import LandingPage from './components/landing/LandingPage.js';
 import TheirStories from './components/landing/TheirStories.js';
-import './index.css';
-import Story from './components/landing/Story.js';
+
+import './SCSS/main.scss';
+import StoryRoute from './components/landing/StoryRoute.js';
 //components
 
 //contexts
 
-function App() {
+function App(props) {
   return (
     <Router>
       <ThemeProvider theme={theme}>
@@ -22,9 +23,11 @@ function App() {
           <Route path="/stories">
             <TheirStories />
           </Route>
-          <Route path="/story/:id">
-            <Story />
-          </Route>
+
+          <Route
+            path="/story/:id"
+            render={props => <StoryRoute {...props} />}
+          />
         </Switch>
       </ThemeProvider>
     </Router>
