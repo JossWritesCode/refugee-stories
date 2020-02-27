@@ -20,6 +20,9 @@ function StoryRoute({ story, getStory, match }) {
           {story.title}
         </Typography>
         <img className="story-picture" src={story.imageUrl} alt="author" />
+        <Typography variant="h6" component="h6">
+          by {story.author}
+        </Typography>
         <Typography className="story-text">{story.story}</Typography>
       </div>
       <Footer />
