@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import NavBar from '../NavBar.js';
 import { Typography, Button } from '@material-ui/core';
 import Footer from '../Footer.js';
+import { Link } from 'react-router-dom';
+import StoryForm from '../StoryForm';
 
 import StoryCarousel from './StoryCarousel.js';
 const useStyles = makeStyles(theme => ({
@@ -29,9 +31,11 @@ export default function LandingPage() {
           <Typography variant="h1" component="h1">
             Refugee Stories
           </Typography>
-          <Button variant="contained" color="secondary">
-            Share Your Story
-          </Button>
+          <Link to="/storyform">
+            <Button variant="contained" color="secondary">
+              Share Your Story
+            </Button>
+          </Link>
           <Typography className={classes.headerSecondary} component="p">
             “Could a greater miracle take place than for us to look through each
             other’s eye for an instant?” - Henry David Thoreau
