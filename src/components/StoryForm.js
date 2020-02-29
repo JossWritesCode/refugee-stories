@@ -5,7 +5,20 @@ import * as Yup from 'yup';
 import NavBar from './NavBar.js';
 import Footer from './Footer.js';
 
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: 200
+    }
+  }
+}));
+
 const StoryForm = () => {
+  const classes = useStyles();
   return (
     <div className="form-container">
       <NavBar />
@@ -34,7 +47,7 @@ const StoryForm = () => {
         />
         <label>Title</label>
         <Field
-          className="field form-field"
+          className="form-field"
           name="title"
           type="text"
           placeholder="Title"
@@ -55,7 +68,7 @@ const StoryForm = () => {
         />
         <label>Your Story</label>
         <Field
-          className="field story-form-field"
+          className="story-form-field"
           component="textarea"
           name="story"
           type="text"
