@@ -31,49 +31,65 @@ const StoryForm = () => {
       </div>
 
       <Form className="signup-form">
-        <label>Author</label>
-        <Field
-          className="field form-field"
-          name="author"
-          type="text"
-          placeholder="Author"
-        />
-        <label>Country of Origin</label>
-        <Field
-          className="field form-field"
-          name="country"
-          type="text"
-          placeholder="Country of Origin"
-        />
-        <label>Title</label>
-        <Field
-          className="form-field"
-          name="title"
-          type="text"
-          placeholder="Title"
-        />
-        <label>Year</label>
-        <Field
-          className="form-field"
-          name="year"
-          type="number"
-          placeholder="Year"
-        />
-        <label>Image</label>
-        <Field
-          className="form-field"
-          name="imageUrl"
-          type="text"
-          placeholder="Image Url"
-        />
-        <label>Your Story</label>
-        <Field
-          className="story-form-field"
-          component="textarea"
-          name="story"
-          type="text"
-        />
-        <button className="submit-button">Submit</button>
+        <div className="main-fields">
+          <div className="field-container">
+            <label>Author</label>
+            <Field
+              className="form-field"
+              name="author"
+              type="text"
+              placeholder="Author"
+            />
+          </div>
+          <div className="field-container">
+            <label>Country of Origin</label>
+            <Field
+              className="form-field"
+              name="country"
+              type="text"
+              placeholder="Country of Origin"
+            />
+          </div>
+          <div className="field-container">
+            <label>Title</label>
+            <Field
+              className="form-field"
+              name="title"
+              type="text"
+              placeholder="Title"
+            />
+          </div>
+          <div className="field-container">
+            <label>Year the Story Took Place</label>
+            <Field
+              className="form-field"
+              name="year"
+              type="number"
+              placeholder="Year"
+            />
+          </div>
+          <div className="field-container">
+            <label>Image</label>
+            <Field
+              className="form-field"
+              name="imageUrl"
+              type="text"
+              placeholder="Image Url"
+            />
+          </div>
+        </div>
+        <div>
+          <div className="field-container">
+            <label>Your Story</label>
+            <Field
+              className="story-form-field"
+              component="textarea"
+              name="story"
+              type="text"
+            />
+            <button className="submit-button btn">Submit</button>
+          </div>
+        </div>
       </Form>
       <Footer />
     </div>

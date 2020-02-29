@@ -11,6 +11,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  font-size: $default-font-size;
+}
+
 * {
   text-decoration: none;
   color: inherit;
