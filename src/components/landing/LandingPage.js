@@ -4,6 +4,9 @@ import NavBar from '../NavBar.js';
 import { Typography, Button } from '@material-ui/core';
 import Footer from '../Footer.js';
 import { Link } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
+import { getStories } from '../../actions';
+import { connect } from 'react-redux';
 
 import StoryCarousel from './StoryCarousel.js';
 const useStyles = makeStyles(theme => ({
@@ -20,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function LandingPage() {
+function LandingPage({ stories, getStories, error, isLoading }) {
   const classes = useStyles();
   return (
     <div className="landing-page">
@@ -39,10 +42,25 @@ export default function LandingPage() {
             “Could a greater miracle take place than for us to look through each
             other’s eye for an instant?” - Henry David Thoreau
           </Typography>
+          {isLoading ? (
+            <Loader type="TailSpin" color="#c96567" height={100} width={100} />
+          ) : (
+            ''
+          )}
         </div>
+
         <StoryCarousel />
       </main>
       <Footer />
     </div>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    isLoading: state.isLoading,
+    stories: state.stories,
+    error: state.error
+  };
+};
+export default connect(mapStateToProps, { getStories })(LandingPage);
