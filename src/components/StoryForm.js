@@ -34,48 +34,23 @@ const StoryForm = () => {
         <div className="main-fields">
           <div className="field-container">
             <label>Author</label>
-            <Field
-              className="form-field"
-              name="author"
-              type="text"
-              placeholder="Author"
-            />
+            <Field className="form-field" name="author" type="text" />
           </div>
           <div className="field-container">
             <label>Country of Origin</label>
-            <Field
-              className="form-field"
-              name="country"
-              type="text"
-              placeholder="Country of Origin"
-            />
+            <Field className="form-field" name="country" type="text" />
           </div>
           <div className="field-container">
             <label>Title</label>
-            <Field
-              className="form-field"
-              name="title"
-              type="text"
-              placeholder="Title"
-            />
+            <Field className="form-field" name="title" type="text" />
           </div>
           <div className="field-container">
             <label>Year the Story Took Place</label>
-            <Field
-              className="form-field"
-              name="year"
-              type="number"
-              placeholder="Year"
-            />
+            <Field className="form-field" name="year" type="number" />
           </div>
           <div className="field-container">
             <label>Image</label>
-            <Field
-              className="form-field"
-              name="imageUrl"
-              type="text"
-              placeholder="Image Url"
-            />
+            <Field className="form-field" name="imageUrl" type="text" />
           </div>
         </div>
         <div>

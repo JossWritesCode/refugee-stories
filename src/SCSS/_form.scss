@@ -43,4 +43,11 @@
 .story-form-field {
   height: 15rem;
   width: 30rem;
+  border: 1px solid $color-black;
+  border-radius: 3px;
+}
+
+.form-field {
+  border: 1px solid $color-black;
+  border-radius: 3px;
 }
