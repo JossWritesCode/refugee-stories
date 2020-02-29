@@ -4,7 +4,6 @@ import NavBar from '../NavBar.js';
 import { Typography, Button } from '@material-ui/core';
 import Footer from '../Footer.js';
 import { Link } from 'react-router-dom';
-import StoryForm from '../StoryForm';
 
 import StoryCarousel from './StoryCarousel.js';
 const useStyles = makeStyles(theme => ({

@@ -5,9 +5,9 @@ import theme from './components/ui/Theme';
 import { Switch, Route } from 'react-router-dom';
 import LandingPage from './components/landing/LandingPage.js';
 import TheirStories from './components/landing/TheirStories.js';
-import StoryForm from './components/StoryForm';
 import './SCSS/main.scss';
 import StoryRoute from './components/landing/StoryRoute.js';
+import FormikStoryForm from './components/StoryForm.js';
 //components
 
 //contexts
@@ -29,7 +29,7 @@ function App(props) {
             render={props => <StoryRoute {...props} />}
           />
           <Route path="/storyform">
-            <StoryForm />
+            <FormikStoryForm />
           </Route>
         </Switch>
       </ThemeProvider>

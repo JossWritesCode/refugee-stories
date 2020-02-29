@@ -5,20 +5,7 @@ import * as Yup from 'yup';
 import NavBar from './NavBar.js';
 import Footer from './Footer.js';
 
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: 200
-    }
-  }
-}));
-
 const StoryForm = () => {
-  const classes = useStyles();
   return (
     <div className="form-container">
       <NavBar />
@@ -62,7 +49,9 @@ const StoryForm = () => {
               name="story"
               type="text"
             />
-            <button className="submit-button btn">Submit</button>
+            <button type="button" className="submit-button btn">
+              Submit
+            </button>
           </div>
         </div>
       </Form>
@@ -101,7 +90,6 @@ const FormikStoryForm = withFormik({
       .then(res => {
         console.log(res.data);
         setStatus(res.data);
-        props.history.push('/story-confirmation');
         resetForm();
       })
       .catch(error => console.log(error.response));
