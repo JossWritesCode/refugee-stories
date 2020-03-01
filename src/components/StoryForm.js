@@ -48,6 +48,7 @@ function StoryForm(props) {
 
   const handleSubmit = event => {
     event.preventDefault();
+    console.log(newStory, 'newStory');
     axios
       .post(
         'https://refugee-stories-api-082019.herokuapp.com/api/public',
@@ -83,7 +84,7 @@ function StoryForm(props) {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="fname"
-                  name="name"
+                  name="author"
                   variant="outlined"
                   required
                   fullWidth
@@ -106,7 +107,7 @@ function StoryForm(props) {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  name="imageURL"
+                  name="imageUrl"
                   variant="outlined"
                   fullWidth
                   id="imageurl"
