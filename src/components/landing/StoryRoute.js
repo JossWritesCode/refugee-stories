@@ -12,7 +12,7 @@ function StoryRoute({ isLoading, story, getStory, match }) {
     console.log('CALLING THE API');
   }, [getStory, match.params.id]);
 
-  console.log();
+
   return (
     <div>
       <NavBar />

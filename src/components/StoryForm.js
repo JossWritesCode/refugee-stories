@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import NavBar from './NavBar.js';
 import Button from '@material-ui/core/Button';
@@ -14,19 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Footer from './Footer.js';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -56,6 +44,27 @@ const useStyles = makeStyles(theme => ({
 function StoryForm(props) {
   const classes = useStyles();
 
+  const [newStory, setNewStory] = useState({});
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    axios
+      .post(
+        'https://refugee-stories-api-082019.herokuapp.com/api/public',
+        newStory
+      )
+      .then(res => {
+        console.log('posted');
+        props.history.push('/');
+      })
+      .catch(error => console.log(error.response));
+  };
+
+  const handleChange = event => {
+    event.preventDefault();
+    setNewStory({ ...newStory, [event.target.name]: event.target.value });
+  };
+
   return (
     <>
       <NavBar />
@@ -65,7 +74,11 @@ function StoryForm(props) {
           <Typography component="h1" variant="h5">
             Share Your Story
           </Typography>
-          <form className={classes.form} noValidate>
+          <form
+            onSubmit={event => handleSubmit(event)}
+            className={classes.form}
+            noValidate
+          >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -77,6 +90,7 @@ function StoryForm(props) {
                   id="name"
                   label="Name"
                   autoFocus
+                  onChange={event => handleChange(event)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -87,16 +101,18 @@ function StoryForm(props) {
                   id="title"
                   label="Title of Story"
                   name="title"
+                  onChange={event => handleChange(event)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  name="imageurl"
+                  name="imageURL"
                   variant="outlined"
                   fullWidth
                   id="imageurl"
                   label="Picture of Author"
                   autoFocus
+                  onChange={event => handleChange(event)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -107,6 +123,7 @@ function StoryForm(props) {
                   id="country"
                   label="Author's Country of Origin"
                   name="country"
+                  onChange={event => handleChange(event)}
                 />
               </Grid>
 
@@ -120,6 +137,7 @@ function StoryForm(props) {
                   label="Story"
                   type="text"
                   id="story"
+                  onChange={event => handleChange(event)}
                 />
               </Grid>
             </Grid>
