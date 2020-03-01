@@ -48,7 +48,6 @@ function StoryForm(props) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(newStory, 'newStory');
     axios
       .post(
         'https://refugee-stories-api-082019.herokuapp.com/api/public',
@@ -56,7 +55,7 @@ function StoryForm(props) {
       )
       .then(res => {
         console.log('posted');
-        props.history.push('/');
+        props.history.push('/storyconfirmation');
       })
       .catch(error => console.log(error.response));
   };
@@ -72,8 +71,12 @@ function StoryForm(props) {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h4">
             Share Your Story
+          </Typography>
+          <Typography variant="subtitle1">
+            Please share your story with us. After our admins have reviewed it,
+            we will do our part to share it with the world.
           </Typography>
           <form
             onSubmit={event => handleSubmit(event)}

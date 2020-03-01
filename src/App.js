@@ -7,7 +7,8 @@ import LandingPage from './components/landing/LandingPage.js';
 import TheirStories from './components/landing/TheirStories.js';
 import './SCSS/main.scss';
 import StoryRoute from './components/landing/StoryRoute.js';
-import FormikStoryForm from './components/StoryForm.js';
+import StoryForm from './components/StoryForm.js';
+import StoryConfirm from './components/landing/StoryConfirm.js';
 //components
 
 //contexts
@@ -23,14 +24,15 @@ function App(props) {
           <Route path="/stories">
             <TheirStories />
           </Route>
+          <Route path="/storyconfirmation">
+            <StoryConfirm />
+          </Route>
 
           <Route
             path="/story/:id"
             render={props => <StoryRoute {...props} />}
           />
-          <Route path="/storyform">
-            <FormikStoryForm />
-          </Route>
+          <Route path="/storyform" render={props => <StoryForm {...props} />} />
         </Switch>
       </ThemeProvider>
     </Router>
