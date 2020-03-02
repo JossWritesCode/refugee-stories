@@ -9,6 +9,7 @@ import './SCSS/main.scss';
 import StoryRoute from './components/landing/StoryRoute.js';
 import StoryForm from './components/StoryForm.js';
 import StoryConfirm from './components/landing/StoryConfirm.js';
+import AdminSignIn from './components/AdminSignIn.js';
 //components
 
 //contexts
@@ -27,7 +28,9 @@ function App(props) {
           <Route path="/storyconfirmation">
             <StoryConfirm />
           </Route>
-
+          <Route path="/signin">
+            <AdminSignIn />
+          </Route>
           <Route
             path="/story/:id"
             render={props => <StoryRoute {...props} />}
