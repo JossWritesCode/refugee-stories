@@ -44,7 +44,9 @@ export default function ButtonAppBar() {
               </Typography>
             </Link>
           </Box>
-          <Typography>Admin</Typography>
+          <Link to="/signin">
+            <Typography>Admin</Typography>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>
