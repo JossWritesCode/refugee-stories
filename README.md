@@ -8,7 +8,10 @@ Live here: https://readrefugeestories.netlify.com
 
 ## Built With
 
-- [React](https://reactjs.org) - The web framework used
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Material UI](https://material-ui.com/)
+- [Sass](https://sass-lang.com/)
 
 ## Contributing
 
@@ -24,6 +27,3 @@ You may make a pull request, and our team will review it.
 - **Joscelyn Owen** - [Joscelyn1](https://github.com/Joscelyn1)
 - **Crystal Soria** - [cmstexas](https://github.com/cmstexas)
 
-## Acknowledgments
-
-- Hat tip to Lambda School who brought us together
