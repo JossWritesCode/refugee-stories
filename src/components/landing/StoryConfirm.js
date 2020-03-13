@@ -1,7 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import NavBar from '../NavBar.js';
-import logo from '../../assets/white-logo.png';
 import { makeStyles } from '@material-ui/core/styles';
 import Footer from '../Footer';
 const useStyles = makeStyles(theme => ({
