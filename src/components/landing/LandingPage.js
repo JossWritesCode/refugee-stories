@@ -9,18 +9,18 @@ import { getStories } from '../../actions';
 import { connect } from 'react-redux';
 
 import StoryCarousel from './StoryCarousel.js';
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   heroimage: {
     width: '60rem',
     padding: '0',
-    margin: '2rem'
+    margin: '2rem',
   },
   headerSecondary: {
-    fontSize: '1.8rem'
-  }
+    fontSize: '1.8rem',
+  },
 }));
 
 function LandingPage({ stories, getStories, error, isLoading }) {
@@ -28,7 +28,7 @@ function LandingPage({ stories, getStories, error, isLoading }) {
   return (
     <div className="landing-page">
       <NavBar />
-      <main>
+      <main className="main-landing">
         <div className="hero-section">
           <Typography variant="h1" component="h1">
             Refugee Stories
@@ -56,11 +56,11 @@ function LandingPage({ stories, getStories, error, isLoading }) {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isLoading: state.isLoading,
     stories: state.stories,
-    error: state.error
+    error: state.error,
   };
 };
 export default connect(mapStateToProps, { getStories })(LandingPage);

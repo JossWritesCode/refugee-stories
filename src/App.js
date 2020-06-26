@@ -33,9 +33,12 @@ function App(props) {
           </Route>
           <Route
             path="/story/:id"
-            render={props => <StoryRoute {...props} />}
+            render={(props) => <StoryRoute {...props} />}
           />
-          <Route path="/storyform" render={props => <StoryForm {...props} />} />
+          <Route
+            path="/storyform"
+            render={(props) => <StoryForm {...props} />}
+          />
         </Switch>
       </ThemeProvider>
     </Router>

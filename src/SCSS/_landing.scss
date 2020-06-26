@@ -2,7 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid green;
 
+  @media (min-width: 700px) {
+    width: 50%;
+    height: 37rem;
+  }
   h1 {
     padding: 1rem;
     text-align: center;
@@ -11,14 +16,30 @@
     margin: 1rem;
   }
 }
-
+.landing-page {
+  height: 100%;
+}
 .landing-page main {
   padding: 2rem;
+  height: 70%;
+}
+
+.main-landing {
+  border: 2px solid red;
+  height: 80%;
+  @media (min-width: 700px) {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 .carousel-container {
   margin: 5rem 0;
 
+  border: 2px solid yellow;
+  @media (min-width: 700px) {
+    margin: 0;
+  }
   .ant-carousel {
     width: 300px !important;
     height: 337px;
