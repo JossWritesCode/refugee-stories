@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import { getStories } from '../../actions';
 import { connect } from 'react-redux';
+import cherryTree from '../../assets/cherry-tree.jpg';
 
 import StoryCarousel from './StoryCarousel.js';
 const useStyles = makeStyles((theme) => ({
@@ -30,27 +31,38 @@ function LandingPage({ stories, getStories, error, isLoading }) {
     <div className="landing-page">
       <NavBar />
       <main className="main-landing">
-        <div className="hero-section">
-          <Typography variant="h1" component="h1">
-            Refugee Stories
-          </Typography>
-          <Link to="/storyform">
-            <Button variant="contained" color="secondary">
-              Share Your Story
-            </Button>
-          </Link>
-          <Typography className={classes.headerSecondary} component="p">
-            “Could a greater miracle take place than for us to look through each
-            other’s eye for an instant?” - Henry David Thoreau
-          </Typography>
-          {isLoading ? (
-            <Loader type="TailSpin" color="#c96567" height={100} width={100} />
-          ) : (
-            ''
-          )}
+        <div className="top-row">
+          <div className="hero-section">
+            <Typography variant="h1" component="h1">
+              Refugee Stories
+            </Typography>
+            <Link to="/storyform">
+              <Button variant="contained" color="secondary">
+                Share Your Story
+              </Button>
+            </Link>
+            <Typography className={classes.headerSecondary} component="p">
+              “Could a greater miracle take place than for us to look through
+              each other’s eye for an instant?” - Henry David Thoreau
+            </Typography>
+            {isLoading ? (
+              <Loader
+                type="TailSpin"
+                color="#c96567"
+                height={100}
+                width={100}
+              />
+            ) : (
+              ''
+            )}
+          </div>
+          <div className="cherry-image-container">
+            <img src={cherryTree} alt="cherry tree" />
+          </div>
         </div>
-
-        <StoryCarousel />
+        <div className="bottom-row">
+          <StoryCarousel />
+        </div>
       </main>
       <Footer />
     </div>

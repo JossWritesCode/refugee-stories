@@ -21,26 +21,29 @@
 }
 
 .main-landing {
-  padding: 10rem 2rem 0rem 2rem;
+  padding: 10rem 5rem 0rem 5rem;
+
   height: 60%;
 
   @media (min-width: 900px) {
-    display: flex;
-    align-items: flex-start;
     min-height: 69vh;
+  }
+
+  .top-row {
+    @media (min-width: 900px) {
+      display: flex;
+    }
   }
 }
 
 .carousel-container {
   margin: 5rem 0;
+  margin: 0 auto;
 
-  @media (min-width: 900px) {
-    margin: 0;
-  }
   .ant-carousel {
     width: 300px !important;
     height: 337px;
-    margin: 0 auto;
+    // margin: 0 auto;
 
     @media (min-width: 900px) {
       width: 500px !important;
@@ -56,6 +59,20 @@
       h3 {
         color: #fff;
       }
+    }
+  }
+}
+
+.cherry-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+
+  img {
+    width: 70%;
+
+    @media (min-width: 900px) {
+      width: 45rem;
     }
   }
 }
