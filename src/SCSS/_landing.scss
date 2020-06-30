@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 700px) {
+  @media (min-width: 900px) {
     width: 50%;
     height: 37rem;
     margin-right: 2rem;
@@ -24,16 +24,17 @@
   padding: 10rem 2rem 0rem 2rem;
   height: 60%;
 
-  @media (min-width: 700px) {
+  @media (min-width: 900px) {
     display: flex;
     align-items: flex-start;
+    min-height: 69vh;
   }
 }
 
 .carousel-container {
   margin: 5rem 0;
 
-  @media (min-width: 700px) {
+  @media (min-width: 900px) {
     margin: 0;
   }
   .ant-carousel {
@@ -41,7 +42,7 @@
     height: 337px;
     margin: 0 auto;
 
-    @media (min-width: 700px) {
+    @media (min-width: 900px) {
       width: 500px !important;
     }
 

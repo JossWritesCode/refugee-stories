@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   headerSecondary: {
     fontSize: '1.8rem',
+    width: '50%',
   },
 }));
 

@@ -8,13 +8,13 @@ import { Typography } from '@material-ui/core';
 import NavBar from '../NavBar.js';
 import Footer from '../Footer.js';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   title: {
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 }));
 function TheirStories({ stories, getStories, error, isLoading }) {
   const classes = useStyles();
@@ -40,7 +40,7 @@ function TheirStories({ stories, getStories, error, isLoading }) {
         )}
 
         <div className="stories-container">
-          {stories.map(story => (
+          {stories.map((story) => (
             <Story key={story.id} story={story} />
           ))}
         </div>
@@ -50,11 +50,11 @@ function TheirStories({ stories, getStories, error, isLoading }) {
   );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     isLoading: state.isLoading,
     stories: state.stories,
-    error: state.error
+    error: state.error,
   };
 };
 export default connect(mapStateToProps, { getStories })(TheirStories);
