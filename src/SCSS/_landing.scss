@@ -37,16 +37,16 @@
 }
 
 .carousel-container {
-  margin: 5rem 0;
   margin: 0 auto;
 
   .ant-carousel {
     width: 300px !important;
     height: 337px;
-    // margin: 0 auto;
+    margin: 0 auto;
 
     @media (min-width: 900px) {
       width: 500px !important;
+      margin-right: 3rem;
     }
 
     .slick-slide {
@@ -66,7 +66,7 @@
 .cherry-image-container {
   display: flex;
   justify-content: center;
-  margin: 2rem;
+  margin: 5rem 0rem 2rem 0rem;
 
   img {
     width: 70%;
@@ -74,5 +74,17 @@
     @media (min-width: 900px) {
       width: 45rem;
     }
+  }
+}
+
+.bottom-row {
+  margin-top: 10rem;
+  @media (min-width: 900px) {
+    display: flex;
+    align-items: center;
+  }
+  #story-text {
+    width: 50%;
+    margin: 0 auto 2rem auto;
   }
 }

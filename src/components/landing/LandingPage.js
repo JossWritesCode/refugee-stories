@@ -62,6 +62,13 @@ function LandingPage({ stories, getStories, error, isLoading }) {
         </div>
         <div className="bottom-row">
           <StoryCarousel />
+          <Typography
+            id="story-text"
+            className={classes.headerSecondary}
+            component="p"
+          >
+            Read stories from displaced people. Grow through understanding.
+          </Typography>
         </div>
       </main>
       <Footer />
