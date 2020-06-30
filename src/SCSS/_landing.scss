@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid green;
 
   @media (min-width: 700px) {
     width: 50%;
     height: 37rem;
+    margin-right: 2rem;
   }
   h1 {
     padding: 1rem;
@@ -20,13 +20,13 @@
   height: 100%;
 }
 .landing-page main {
-  padding: 2rem;
   height: 70%;
 }
 
 .main-landing {
-  border: 2px solid red;
-  height: 80%;
+  padding: 10rem 2rem 0rem 2rem;
+  height: 60%;
+
   @media (min-width: 700px) {
     display: flex;
     align-items: flex-start;
@@ -36,7 +36,6 @@
 .carousel-container {
   margin: 5rem 0;
 
-  border: 2px solid yellow;
   @media (min-width: 700px) {
     margin: 0;
   }
