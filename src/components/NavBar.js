@@ -3,28 +3,34 @@ import { makeStyles } from '@material-ui/core/styles';
 import Logo from '../assets/pink-logo.png';
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    width: '100%'
+    width: '100%',
   },
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   logo: {
-    width: '75px'
+    width: '75px',
   },
   toolbar: {
     justifyContent: 'space-between',
-    display: 'flex'
+    display: 'flex',
   },
   box: {
     display: 'flex',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
+
+  navLink: {
+    textAlign: 'center',
+    fontSize: '1.6rem',
+    marginRight: '3rem',
+  },
 }));
 
 export default function ButtonAppBar() {
@@ -38,10 +44,13 @@ export default function ButtonAppBar() {
             <Link to="/">
               <img className={classes.logo} src={Logo} alt="logo" />
             </Link>
-            <Link to="/">
-              <Typography className="stories-header">
+            {/* <Link to="/">
+              <Typography className={classes.navLink}>
                 Refugee Stories
               </Typography>
+            </Link> */}
+            <Link to="/stories">
+              <Typography className={classes.navLink}>Stories</Typography>
             </Link>
           </Box>
           <Link to="/signin">
