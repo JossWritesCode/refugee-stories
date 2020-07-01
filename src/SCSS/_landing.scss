@@ -5,8 +5,9 @@
 
   @media (min-width: 900px) {
     width: 50%;
-    height: 37rem;
+    height: 30rem;
     margin-right: 2rem;
+    padding-top: 4rem;
   }
   h1 {
     padding: 1rem;
@@ -32,7 +33,9 @@
   .top-row {
     @media (min-width: 900px) {
       display: flex;
+
       justify-content: center;
+      align-items: flex-start;
     }
   }
 }
