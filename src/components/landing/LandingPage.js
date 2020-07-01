@@ -64,7 +64,7 @@ function LandingPage({ stories, getStories, error, isLoading }) {
           <StoryCarousel />
           <div className="story-links">
             <Link to="/stories">
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="secondary">
                 Read Stories
               </Button>
             </Link>

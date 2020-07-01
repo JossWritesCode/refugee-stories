@@ -81,18 +81,19 @@
 
 .bottom-row {
   margin-top: 10rem;
+  width: 100%;
 
   .story-links {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 50%;
   }
   @media (min-width: 900px) {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
   }
   #story-text {
     width: 80%;
