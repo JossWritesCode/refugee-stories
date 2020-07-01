@@ -32,12 +32,14 @@
   .top-row {
     @media (min-width: 900px) {
       display: flex;
+      justify-content: center;
     }
   }
 }
 
 .carousel-container {
   margin: 0 auto;
+  width: 50%;
 
   .ant-carousel {
     width: 300px !important;
@@ -79,12 +81,25 @@
 
 .bottom-row {
   margin-top: 10rem;
+
+  .story-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   @media (min-width: 900px) {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 50%;
   }
   #story-text {
-    width: 50%;
-    margin: 0 auto 2rem auto;
+    width: 80%;
+    text-align: center;
+    margin: 0;
+    @media (min-width: 900px) {
+      margin: 0 auto;
+    }
   }
 }

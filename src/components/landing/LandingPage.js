@@ -62,13 +62,20 @@ function LandingPage({ stories, getStories, error, isLoading }) {
         </div>
         <div className="bottom-row">
           <StoryCarousel />
-          <Typography
-            id="story-text"
-            className={classes.headerSecondary}
-            component="p"
-          >
-            Read stories from displaced people. Grow through understanding.
-          </Typography>
+          <div className="story-links">
+            <Link to="/stories">
+              <Button variant="contained" color="primary">
+                Read Stories
+              </Button>
+            </Link>
+            <Typography
+              id="story-text"
+              className={classes.headerSecondary}
+              component="p"
+            >
+              Grow through understanding.
+            </Typography>
+          </div>
         </div>
       </main>
       <Footer />
