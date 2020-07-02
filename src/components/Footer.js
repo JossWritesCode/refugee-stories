@@ -3,20 +3,20 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 import Logo from '../assets/pink-logo.png';
 import { Link } from 'react-router-dom';
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   footer: {
     backgroundColor: '#03002e',
     color: 'white',
     textAlign: 'center',
     margin: '0',
-    padding: '0'
+    padding: '2rem',
   },
   logo: {
-    width: '100px'
-  }
+    width: '100px',
+  },
 }));
 
 export default function Footer() {
