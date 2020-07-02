@@ -2,11 +2,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  min-height: 45vh;
+  // background: url() no-repeat center center;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.749),
+      rgba(255, 255, 255, 0.749)
+    ),
+    url(../assets/cherry-tree.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
   @media (min-width: 900px) {
-    width: 50%;
     height: 30rem;
-    margin-right: 2rem;
+
     padding-top: 4rem;
   }
   h1 {
@@ -22,7 +36,7 @@
 }
 
 .main-landing {
-  padding: 10rem 5rem 0rem 5rem;
+  // padding: 10rem 5rem 0rem 5rem;
 
   height: 60%;
 

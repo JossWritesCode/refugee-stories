@@ -56,9 +56,9 @@ function LandingPage({ stories, getStories, error, isLoading }) {
               ''
             )}
           </div>
-          <div className="cherry-image-container">
+          {/* <div className="cherry-image-container">
             <img src={cherryTree} alt="cherry tree" />
-          </div>
+          </div> */}
         </div>
         <div className="bottom-row">
           <StoryCarousel />
@@ -73,7 +73,7 @@ function LandingPage({ stories, getStories, error, isLoading }) {
               className={classes.headerSecondary}
               component="p"
             >
-              Grow through understanding.
+              Grow through understanding
             </Typography>
           </div>
         </div>
