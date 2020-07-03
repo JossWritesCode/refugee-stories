@@ -30,6 +30,7 @@
 .stories-header {
   text-align: center;
   font-size: 1.6rem;
+  font-family: 'Prata', serif;
 }
 
 .stories-header:hover {
@@ -45,10 +46,12 @@
 }
 
 .story-container {
-  width: 99vw;
+  padding: 10rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 5rem 0 !important;
+  max-width: 80vw;
 }

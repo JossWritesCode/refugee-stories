@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import { getStories } from '../../actions';
 import { connect } from 'react-redux';
-import cherryTree from '../../assets/cherry-tree.jpg';
 
 import StoryCarousel from './StoryCarousel.js';
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +21,11 @@ const useStyles = makeStyles((theme) => ({
   headerSecondary: {
     fontSize: '1.8rem',
     width: '50%',
+    fontFamily: 'Prata',
+  },
+  headerPrimary: {
+    fontFamily: 'Prata',
+    fontSize: '8rem',
   },
 }));
 
@@ -33,7 +37,11 @@ function LandingPage({ stories, getStories, error, isLoading }) {
       <main className="main-landing">
         <div className="top-row">
           <div className="hero-section">
-            <Typography variant="h1" component="h1">
+            <Typography
+              className={classes.headerPrimary}
+              variant="h1"
+              component="h1"
+            >
               Refugee Stories
             </Typography>
             <Link to="/storyform">
@@ -56,9 +64,6 @@ function LandingPage({ stories, getStories, error, isLoading }) {
               ''
             )}
           </div>
-          {/* <div className="cherry-image-container">
-            <img src={cherryTree} alt="cherry tree" />
-          </div> */}
         </div>
         <div className="bottom-row">
           <StoryCarousel />
