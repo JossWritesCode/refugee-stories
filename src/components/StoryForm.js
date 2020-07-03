@@ -6,7 +6,7 @@ import {
   TextField,
   Grid,
   Typography,
-  Container
+  Container,
 } from '@material-ui/core';
 
 import NavBar from './NavBar.js';
@@ -16,29 +16,34 @@ import { makeStyles } from '@material-ui/core/styles';
 import Footer from './Footer.js';
 import axios from 'axios';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: theme.palette.secondary.main,
+  },
+  headerPrimary: {
+    fontFamily: 'Prata',
+    fontSize: '8rem',
+    textAlign: 'center',
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3)
+    marginTop: theme.spacing(3),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
+    margin: theme.spacing(3, 0, 2),
   },
   story: {
     height: 250,
     width: 400,
-    labelOffset: -20
-  }
+    labelOffset: -20,
+  },
 }));
 
 function StoryForm(props) {
@@ -46,21 +51,21 @@ function StoryForm(props) {
 
   const [newStory, setNewStory] = useState({});
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     axios
       .post(
         'https://refugee-stories-api-082019.herokuapp.com/api/public',
         newStory
       )
-      .then(res => {
+      .then((res) => {
         console.log('posted');
         props.history.push('/storyconfirmation');
       })
-      .catch(error => console.log(error.response));
+      .catch((error) => console.log(error.response));
   };
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     event.preventDefault();
     setNewStory({ ...newStory, [event.target.name]: event.target.value });
   };
@@ -71,7 +76,11 @@ function StoryForm(props) {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography component="h1" variant="h4">
+          <Typography
+            classes={classes.headerPrimary}
+            component="h1"
+            variant="h4"
+          >
             Share Your Story
           </Typography>
           <Typography variant="subtitle1">
@@ -79,7 +88,7 @@ function StoryForm(props) {
             we will do our part to share it with the world.
           </Typography>
           <form
-            onSubmit={event => handleSubmit(event)}
+            onSubmit={(event) => handleSubmit(event)}
             className={classes.form}
             noValidate
           >
@@ -94,7 +103,7 @@ function StoryForm(props) {
                   id="name"
                   label="Name"
                   autoFocus
-                  onChange={event => handleChange(event)}
+                  onChange={(event) => handleChange(event)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -105,7 +114,7 @@ function StoryForm(props) {
                   id="title"
                   label="Title of Story"
                   name="title"
-                  onChange={event => handleChange(event)}
+                  onChange={(event) => handleChange(event)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -116,7 +125,7 @@ function StoryForm(props) {
                   id="imageurl"
                   label="Picture of Author"
                   autoFocus
-                  onChange={event => handleChange(event)}
+                  onChange={(event) => handleChange(event)}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -127,7 +136,7 @@ function StoryForm(props) {
                   id="country"
                   label="Author's Country of Origin"
                   name="country"
-                  onChange={event => handleChange(event)}
+                  onChange={(event) => handleChange(event)}
                 />
               </Grid>
 
@@ -141,7 +150,7 @@ function StoryForm(props) {
                   label="Story"
                   type="text"
                   id="story"
-                  onChange={event => handleChange(event)}
+                  onChange={(event) => handleChange(event)}
                 />
               </Grid>
             </Grid>

@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     margin: '0',
     padding: '2rem',
+    fontFamily: 'Prata',
   },
   logo: {
     width: '100px',

@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     textAlign: 'center',
     color: 'black',
+    fontFamily: 'Prata',
   },
 }));
 function TheirStories({ stories, getStories, error, isLoading }) {

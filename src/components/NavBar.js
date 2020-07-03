@@ -7,12 +7,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     width: '100%',
+    fontFamily: 'Prata',
   },
   menuButton: {
     marginRight: theme.spacing(2),
   },
   title: {
     flexGrow: 1,
+    fontFamily: 'Prata',
   },
   logo: {
     width: '75px',
@@ -30,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     fontSize: '1.6rem',
     marginRight: '3rem',
+    fontFamily: 'Prata',
   },
 }));
 

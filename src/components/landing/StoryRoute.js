@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   headerSecondary: {
-    fontSize: '1.8rem',
+    fontSize: '2.4rem',
     width: '50%',
     fontFamily: 'Prata',
     textAlign: 'center',
