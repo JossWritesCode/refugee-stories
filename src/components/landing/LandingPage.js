@@ -19,13 +19,28 @@ const useStyles = makeStyles((theme) => ({
     margin: '2rem',
   },
   headerSecondary: {
-    fontSize: '1.8rem',
+    fontSize: '1.4rem',
     width: '50%',
+    paddingTop: '1rem',
     fontFamily: 'Prata',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.6rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.8rem',
+    },
   },
+
   headerPrimary: {
     fontFamily: 'Prata',
-    fontSize: '8rem',
+    fontSize: '4rem',
+    paddingTop: '1rem',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '6rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '8rem',
+    },
   },
 }));
 
@@ -53,19 +68,14 @@ function LandingPage({ stories, getStories, error, isLoading }) {
               “Could a greater miracle take place than for us to look through
               each other’s eye for an instant?” - Henry David Thoreau
             </Typography>
-            {isLoading ? (
-              <Loader
-                type="TailSpin"
-                color="#c96567"
-                height={100}
-                width={100}
-              />
-            ) : (
-              ''
-            )}
           </div>
         </div>
         <div className="bottom-row">
+          {isLoading ? (
+            <Loader type="TailSpin" color="#c96567" height={100} width={100} />
+          ) : (
+            ''
+          )}
           <StoryCarousel />
           <div className="story-links">
             <Link to="/stories">
