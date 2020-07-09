@@ -1,7 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
-
+import { makeStyles } from '@material-ui/core/styles';
+import { Typography, Button } from '@material-ui/core';
 import StoryCard from './StoryForReview';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  heroimage: {
+    width: '60rem',
+    padding: '0',
+    margin: '2rem',
+  },
+  headerSecondary: {
+    fontSize: '1.4rem',
+    width: '100%',
+    paddingTop: '1rem',
+    fontFamily: 'Prata',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.6rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.8rem',
+    },
+  },
+
+  headerPrimary: {
+    fontFamily: 'Prata',
+    fontSize: '4rem',
+    paddingTop: '1rem',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '6rem',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '8rem',
+    },
+  },
+}));
 
 const StoriesForReview = () => {
   const [stories, setStories] = useState([]);
@@ -18,10 +53,12 @@ const StoriesForReview = () => {
       })
       .catch((error) => console.log(error.response));
   }, []);
-
+  const classes = useStyles();
   return (
     <div className="container">
-      <h2>Stories For Your Review:</h2>
+      <Typography component="h2" className={classes.headerSecondary}>
+        New Stories for Your Review
+      </Typography>
       <div className="pending-stories-display">
         {stories.length > 0 ? (
           stories.map((story) => (
