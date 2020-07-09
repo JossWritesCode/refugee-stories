@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './components/ui/Theme';
@@ -30,9 +30,10 @@ function App(props) {
           <Route path="/storyconfirmation">
             <StoryConfirm />
           </Route>
-          <Route path="/signin">
-            <AdminSignIn />
-          </Route>
+          <Route
+            path="/signin"
+            render={(props) => <AdminSignIn {...props} />}
+          />
           <Route
             path="/story/:id"
             render={(props) => <StoryRoute {...props} />}
