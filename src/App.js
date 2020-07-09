@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './components/ui/Theme';
@@ -12,6 +12,7 @@ import StoryConfirm from './components/landing/StoryConfirm.js';
 import AdminSignIn from './components/AdminSignIn.js';
 import PrivateRoute from './components/admin/PrivateRoute';
 import Dashboard from './components/admin/Dashboard';
+import AdminStoryView from './components/admin/AdminStoryView.js';
 //components
 
 //contexts
@@ -45,6 +46,7 @@ function App(props) {
           <PrivateRoute exact path="/dashboard">
             <Dashboard />
           </PrivateRoute>
+          <Route exact path="/dashboard/story/:id" component={AdminStoryView} />
         </Switch>
       </ThemeProvider>
     </Router>
