@@ -1,5 +1,4 @@
 import React from 'react';
-import { reject } from 'q';
 
 //material ui dependencies
 import Button from '@material-ui/core/Button';
