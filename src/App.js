@@ -10,6 +10,8 @@ import StoryRoute from './components/landing/StoryRoute.js';
 import StoryForm from './components/StoryForm.js';
 import StoryConfirm from './components/landing/StoryConfirm.js';
 import AdminSignIn from './components/AdminSignIn.js';
+import PrivateRoute from './components/admin/PrivateRoute';
+import Dashboard from './components/admin/Dashboard';
 //components
 
 //contexts
@@ -39,6 +41,9 @@ function App(props) {
             path="/storyform"
             render={(props) => <StoryForm {...props} />}
           />
+          <PrivateRoute exact path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
         </Switch>
       </ThemeProvider>
     </Router>
