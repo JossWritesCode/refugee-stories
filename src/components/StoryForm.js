@@ -123,7 +123,7 @@ function StoryForm(props) {
                   variant="outlined"
                   fullWidth
                   id="imageurl"
-                  label="Picture of Author"
+                  label="Link to Picture of Author"
                   autoFocus
                   onChange={(event) => handleChange(event)}
                 />
@@ -150,6 +150,8 @@ function StoryForm(props) {
                   label="Story"
                   type="text"
                   id="story"
+                  multiline="true"
+                  rows="100"
                   onChange={(event) => handleChange(event)}
                 />
               </Grid>
