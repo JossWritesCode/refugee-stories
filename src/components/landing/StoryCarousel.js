@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.8rem',
     fontFamily: 'Prata',
     textAlign: 'center',
+    '&:hover': {
+      color: theme.palette.secondary.main,
+    },
   },
   headerPrimary: {
     fontFamily: 'Prata',

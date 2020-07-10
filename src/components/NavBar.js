@@ -28,6 +28,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
 
+  admin: {
+    color: 'white',
+    '&:hover': {
+      color: theme.palette.secondary.main,
+    },
+  },
+
   navLink: {
     textAlign: 'center',
     fontSize: '1.6rem',
@@ -60,7 +67,7 @@ export default function ButtonAppBar() {
             </Link>
           </Box>
           <Link to="/signin">
-            <Typography>Admin</Typography>
+            <Typography className={classes.admin}>Admin</Typography>
           </Link>
         </Toolbar>
       </AppBar>
