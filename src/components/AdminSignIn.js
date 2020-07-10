@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import { login } from '../actions';
 import NavBar from './NavBar.js';
 import Footer from './Footer.js';
 import {
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AdminSignIn = (props) => {
+const AdminSignIn = ({ login, isLoading, error, history, token }) => {
   //make a post request to retrieve the token from BE
   //set token to local storage
   //navigate user to admin dashboard
@@ -62,24 +62,17 @@ const AdminSignIn = (props) => {
 
   const [userInfo, setUserInfo] = useState({});
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    login(userInfo);
+    localStorage.setItem('token', token);
+    history.push('/dashboard');
+  };
+
   const handleChange = (event) => {
     event.preventDefault();
     setUserInfo({ ...userInfo, [event.target.name]: event.target.value });
   };
-
-  function handleSubmit(values) {
-    axios
-      .post(
-        'https://refugee-stories-api-082019.herokuapp.com/api/login',
-        values
-      )
-      .then((res) => {
-        localStorage.setItem('token', res.data.token);
-        props.history.push('/dashboard');
-        // resetForm();
-      })
-      .catch((err) => console.log(err.response));
-  }
 
   const classes = useStyles();
   return (
@@ -150,4 +143,12 @@ const AdminSignIn = (props) => {
   );
 };
 
-export default AdminSignIn;
+const mapStateToProps = (state) => {
+  return {
+    isLoading: state.isLoading,
+    error: state.error,
+    token: state.token,
+  };
+};
+
+export default connect(mapStateToProps, { login })(AdminSignIn);
