@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import NavBar from '../NavBar.js';
 import Footer from '../Footer.js';
+import BackButton from '../BackButton';
 import Loader from 'react-loader-spinner';
 import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
@@ -51,7 +52,7 @@ function StoryRoute({ isLoading, story, getStory, match }) {
   return (
     <div>
       <NavBar />
-
+      <BackButton />
       <div className="story-container">
         <Link className={classes.backButton} to="/stories">
           &#8592;

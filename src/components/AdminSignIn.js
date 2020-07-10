@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { withFormik, Form, Field } from 'formik';
+
 import { Link } from 'react-router-dom';
-import * as Yup from 'yup';
+
 import NavBar from './NavBar.js';
 import Footer from './Footer.js';
 import {
@@ -44,25 +44,43 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(2),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  textField: {
+    marginTop: '2rem',
+  },
 }));
 
-const AdminSignIn = ({
-  history,
-  errors,
-  touched,
-  values,
-  handleSubmit,
-  status,
-}) => {
+const AdminSignIn = (props) => {
   //make a post request to retrieve the token from BE
   //set token to local storage
   //navigate user to admin dashboard
   //render a form to allow admin to login
+
+  const [userInfo, setUserInfo] = useState({});
+
+  const handleChange = (event) => {
+    event.preventDefault();
+    setUserInfo({ ...userInfo, [event.target.name]: event.target.value });
+  };
+
+  function handleSubmit(values) {
+    axios
+      .post(
+        'https://refugee-stories-api-082019.herokuapp.com/api/login',
+        values
+      )
+      .then((res) => {
+        localStorage.setItem('token', res.data.token);
+        props.history.push('/dashboard');
+        // resetForm();
+      })
+      .catch((err) => console.log(err.response));
+  }
+
   const classes = useStyles();
   return (
     <Container className={classes.root} component="main" maxWidth="xs">
@@ -75,31 +93,40 @@ const AdminSignIn = ({
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <Form className={classes.form}>
-          <label>Email</label>
-          <Field
-            className="field form-field"
-            type="text"
+        <form
+          onSubmit={(event) => handleSubmit(event)}
+          className={classes.form}
+        >
+          <TextField
+            autoComplete="email"
             name="email"
-            placeholder="email address"
-          />
-          {touched.email && errors.email && (
-            <p className="error">{errors.email}</p>
-          )}
-          <label>Password</label>
-          <Field
-            className="field form-field"
-            type="password"
+            variant="outlined"
+            required
+            fullWidth
+            id="email"
+            label="Email"
+            autoFocus
+            onChange={(event) => handleChange(event)}
+            className={classes.textField}
+          ></TextField>
+
+          <TextField
+            autoComplete="password"
             name="password"
-            placeholder="password"
-          />
-          {touched.password && errors.password && (
-            <p className="error">{errors.password}</p>
-          )}
-          <FormControlLabel
+            variant="outlined"
+            required
+            fullWidth
+            id="password"
+            label="Password"
+            autoFocus
+            onChange={(event) => handleChange(event)}
+            className={classes.textField}
+          ></TextField>
+
+          {/* <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
-          />
+          /> */}
           <Button
             type="submit"
             fullWidth
@@ -111,44 +138,16 @@ const AdminSignIn = ({
           </Button>
           <Grid container>
             <Grid item>
-              <Link href="#" variant="body2">
+              {/* <Link href="#" variant="body2">
                 {'Want to be an admin? Apply here'}
-              </Link>
+              </Link> */}
             </Grid>
           </Grid>
-        </Form>
+        </form>
       </div>
       <Footer />
     </Container>
   );
 };
 
-const FormikLoginForm = withFormik({
-  mapPropsToValues({ email, password }) {
-    return {
-      email: email || '',
-      password: password || '',
-    };
-  },
-
-  validationSchema: Yup.object().shape({
-    email: Yup.string().required(),
-    password: Yup.string().required(),
-  }),
-
-  handleSubmit(values, { props, resetForm }) {
-    axios
-      .post(
-        'https://refugee-stories-api-082019.herokuapp.com/api/login',
-        values
-      )
-      .then((res) => {
-        localStorage.setItem('token', res.data.token);
-        props.history.push('/dashboard');
-        // resetForm();
-      })
-      .catch((err) => console.log(err.response));
-  },
-})(AdminSignIn);
-
-export default FormikLoginForm;
+export default AdminSignIn;

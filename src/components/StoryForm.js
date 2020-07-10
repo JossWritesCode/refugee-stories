@@ -8,7 +8,7 @@ import {
   Typography,
   Container,
 } from '@material-ui/core';
-
+import BackButton from './BackButton';
 import NavBar from './NavBar.js';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -73,6 +73,7 @@ function StoryForm(props) {
   return (
     <>
       <NavBar />
+      <BackButton />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -90,7 +91,6 @@ function StoryForm(props) {
           <form
             onSubmit={(event) => handleSubmit(event)}
             className={classes.form}
-            noValidate
           >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
