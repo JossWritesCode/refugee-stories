@@ -1,10 +1,11 @@
 import React from 'react';
 import NavBar from '../NavBar.js';
 import { makeStyles } from '@material-ui/core/styles';
+import BackButton from '../BackButton';
 import Footer from '../Footer';
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   main: {
     display: 'flex',
@@ -14,11 +15,11 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     margin: '0 auto',
     width: '50%',
-    height: '70vh'
+    height: '70vh',
   },
   thanks: {
-    margin: '5rem'
-  }
+    margin: '5rem',
+  },
 }));
 
 function StoryConfirm() {
@@ -26,6 +27,7 @@ function StoryConfirm() {
   return (
     <div className={classes.root}>
       <NavBar />
+      <BackButton />
       <main className={classes.main}>
         <div className={classes.thanks}>
           <h1 className="h1">Thank you!</h1>

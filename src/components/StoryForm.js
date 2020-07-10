@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { connect } from 'react-redux';
 import {
   Button,
   CssBaseline,
@@ -10,11 +10,10 @@ import {
 } from '@material-ui/core';
 import BackButton from './BackButton';
 import NavBar from './NavBar.js';
-
 import { makeStyles } from '@material-ui/core/styles';
-
 import Footer from './Footer.js';
 import axios from 'axios';
+import { submitStory } from '../actions';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -46,23 +45,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function StoryForm(props) {
+function StoryForm({ isLoading, error, submitStory }) {
   const classes = useStyles();
 
   const [newStory, setNewStory] = useState({});
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios
-      .post(
-        'https://refugee-stories-api-082019.herokuapp.com/api/public',
-        newStory
-      )
-      .then((res) => {
-        console.log('posted');
-        props.history.push('/storyconfirmation');
-      })
-      .catch((error) => console.log(error.response));
+    submitStory(newStory);
   };
 
   const handleChange = (event) => {
@@ -173,6 +163,12 @@ function StoryForm(props) {
   );
 }
 
-export default StoryForm;
+const mapStateToProps = (state) => {
+  return {
+    isLoading: state.isLoading,
+    error: state.error,
+  };
+};
+export default connect(mapStateToProps, { submitStory })(StoryForm);
 
 // https://refugee-stories-api-082019.herokuapp.com/api/public
