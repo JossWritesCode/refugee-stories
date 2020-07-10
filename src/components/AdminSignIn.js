@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { login } from '../actions';
 import NavBar from './NavBar.js';
 import Footer from './Footer.js';
@@ -65,8 +63,12 @@ const AdminSignIn = ({ login, isLoading, error, history, token }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     login(userInfo);
-    localStorage.setItem('token', token);
-    history.push('/dashboard');
+
+    if (token !== undefined) {
+      console.log(token, 'token');
+      history.push('/dashboard');
+      localStorage.setItem('token', token);
+    }
   };
 
   const handleChange = (event) => {
@@ -93,6 +95,7 @@ const AdminSignIn = ({ login, isLoading, error, history, token }) => {
           <TextField
             autoComplete="email"
             name="email"
+            type="email"
             variant="outlined"
             required
             fullWidth
@@ -108,6 +111,7 @@ const AdminSignIn = ({ login, isLoading, error, history, token }) => {
             name="password"
             variant="outlined"
             required
+            type="password"
             fullWidth
             id="password"
             label="Password"
