@@ -6,6 +6,7 @@ import NavBar from '../NavBar.js';
 import Footer from '../Footer.js';
 import Loader from 'react-loader-spinner';
 import { Typography } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     width: '50%',
     fontFamily: 'Prata',
     textAlign: 'center',
+    minWidth: '30rem',
   },
   headerPrimary: {
     fontFamily: 'Prata',
@@ -26,6 +28,16 @@ const useStyles = makeStyles((theme) => ({
   storyText: {
     fontSize: '1.6rem',
     margin: '2rem',
+  },
+  backButton: {
+    position: 'absolute',
+    top: '20%',
+    left: '20%',
+    fontFamily: 'Prata',
+    fontSize: '2.4rem',
+    '&:hover': {
+      color: theme.palette.secondary.main,
+    },
   },
 }));
 
@@ -39,7 +51,11 @@ function StoryRoute({ isLoading, story, getStory, match }) {
   return (
     <div>
       <NavBar />
+
       <div className="story-container">
+        <Link className={classes.backButton} to="/stories">
+          &#8592;
+        </Link>
         {isLoading ? (
           <Loader type="TailSpin" color="#c96567" height={100} width={100} />
         ) : (

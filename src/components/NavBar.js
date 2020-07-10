@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.6rem',
     marginRight: '3rem',
     fontFamily: 'Prata',
+    '&:hover': {
+      color: theme.palette.secondary.main,
+    },
   },
 }));
 
