@@ -21,10 +21,8 @@ const useStyles = makeStyles((theme) => ({
 function TheirStories({ stories, getStories, error, isLoading }) {
   const classes = useStyles();
   useEffect(() => {
-    if (stories.length === 0) {
-      getStories();
-      console.log('CALLING THE API');
-    }
+    getStories();
+    console.log('CALLING THE API');
   }, [getStories, stories.length]);
 
   return (

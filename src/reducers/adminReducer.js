@@ -5,9 +5,6 @@ import {
 } from '../actions';
 
 const initialState = {
-  adminInfo: {},
-  isLoading: false,
-  error: 'error',
   token: '',
 };
 
@@ -16,21 +13,21 @@ export const adminReducer = (state = initialState, action) => {
     case POST_LOGIN_DATA_START:
       return {
         ...state,
-        isLoading: true,
-        error: false,
+        // isLoading: true,
+        // error: false,
       };
     case POST_LOGIN_DATA_SUCCESS:
       return {
         ...state,
-        isLoading: false,
+        // isLoading: false,
         token: action.payload,
-        error: false,
+        // error: false,
       };
     case POST_LOGIN_DATA_FAILURE:
       return {
         ...state,
-        isLoading: false,
-        error: true,
+        // isLoading: false,
+        // error: true,
       };
 
     default:

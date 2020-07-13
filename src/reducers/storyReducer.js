@@ -17,7 +17,7 @@ const initialState = {
   error: 'error',
 };
 
-export const reducer = (state = initialState, action) => {
+export const storyReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_STORIES_DATA_START:
       return {
