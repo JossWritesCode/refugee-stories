@@ -23,7 +23,7 @@ export const adminReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        token: action.payload.data,
+        token: action.payload,
         error: false,
       };
     case POST_LOGIN_DATA_FAILURE:
