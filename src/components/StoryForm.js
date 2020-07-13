@@ -12,7 +12,6 @@ import BackButton from './BackButton';
 import NavBar from './NavBar.js';
 import { makeStyles } from '@material-ui/core/styles';
 import Footer from './Footer.js';
-import axios from 'axios';
 import { submitStory } from '../actions';
 
 const useStyles = makeStyles((theme) => ({

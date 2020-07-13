@@ -63,12 +63,9 @@ const AdminSignIn = ({ login, isLoading, error, history, token }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     login(userInfo);
-
-    if (token !== undefined) {
-      console.log(token, 'token');
-      history.push('/dashboard');
-      localStorage.setItem('token', token);
-    }
+    console.log('token', token);
+    localStorage.setItem('token', token);
+    history.push('/dashboard');
   };
 
   const handleChange = (event) => {
