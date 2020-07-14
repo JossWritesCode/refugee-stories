@@ -18,12 +18,12 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Prata',
   },
 }));
-function TheirStories({ stories, getStories, error, isLoading }) {
+function TheirStories({ storyData, getStories }) {
   const classes = useStyles();
   useEffect(() => {
     getStories();
     console.log('CALLING THE API');
-  }, [getStories, stories.length]);
+  }, [getStories, storyData.stories.length]);
 
   return (
     <div className="their-stories">
@@ -32,15 +32,15 @@ function TheirStories({ stories, getStories, error, isLoading }) {
         <Typography className={classes.title} variant="h3">
           Their Stories
         </Typography>
-        {error ? <p className="error">Error</p> : ''}
-        {isLoading ? (
+        {storyData.error ? <p className="error">Error</p> : ''}
+        {storyData.isLoading ? (
           <Loader type="TailSpin" color="#00BFFF" height={100} width={100} />
         ) : (
           ''
         )}
 
         <div className="stories-container">
-          {stories.map((story) => (
+          {storyData.stories.map((story) => (
             <Story key={story.id} story={story} />
           ))}
         </div>
@@ -52,9 +52,7 @@ function TheirStories({ stories, getStories, error, isLoading }) {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    stories: state.stories,
-    error: state.error,
+    storyData: state.storyData,
   };
 };
 export default connect(mapStateToProps, { getStories })(TheirStories);

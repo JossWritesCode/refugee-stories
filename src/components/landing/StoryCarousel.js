@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function StoryCarousel({ stories, getStories }) {
+function StoryCarousel({ storyData, getStories }) {
   const classes = useStyles();
   useEffect(() => {
     getStories();
@@ -34,7 +34,7 @@ function StoryCarousel({ stories, getStories }) {
     console.log('CALLING THE API');
   }, [getStories]);
 
-  const recentStories = stories.slice(0, 4);
+  const recentStories = storyData.stories.slice(0, 4);
   return (
     <div className="carousel-container">
       <Link to="/stories">
@@ -52,9 +52,7 @@ function StoryCarousel({ stories, getStories }) {
 }
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    stories: state.stories,
-    error: state.error,
+    storyData: state.storyData,
   };
 };
 export default connect(mapStateToProps, { getStories })(StoryCarousel);

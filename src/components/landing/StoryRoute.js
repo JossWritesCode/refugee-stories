@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function StoryRoute({ isLoading, story, getStory, match }) {
+function StoryRoute({ storyData, getStory, match }) {
   const classes = useStyles();
   useEffect(() => {
     getStory(match.params.id);
@@ -57,7 +57,7 @@ function StoryRoute({ isLoading, story, getStory, match }) {
         <Link className={classes.backButton} to="/stories">
           &#8592;
         </Link>
-        {isLoading ? (
+        {storyData.isLoading ? (
           <Loader type="TailSpin" color="#c96567" height={100} width={100} />
         ) : (
           ''
@@ -67,18 +67,24 @@ function StoryRoute({ isLoading, story, getStory, match }) {
           variant="h3"
           component="h3"
         >
-          {story.title}
+          {storyData.story.title}
         </Typography>
 
-        <img className="story-picture" src={story.imageUrl} alt="author" />
+        <img
+          className="story-picture"
+          src={storyData.story.imageUrl}
+          alt="author"
+        />
         <Typography
           variant="h6"
           component="h6"
           className={classes.headerSecondary}
         >
-          by {story.author}
+          by {storyData.story.author}
         </Typography>
-        <Typography className={classes.storyText}>{story.story}</Typography>
+        <Typography className={classes.storyText}>
+          {storyData.story.story}
+        </Typography>
       </div>
       <Footer />
     </div>
@@ -87,10 +93,7 @@ function StoryRoute({ isLoading, story, getStory, match }) {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    stories: state.stories,
-    story: state.story,
-    error: state.error,
+    storyData: state.storyData,
   };
 };
 export default connect(mapStateToProps, { getStory })(StoryRoute);
