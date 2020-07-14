@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function StoryForm({ isLoading, error, submitStory }) {
+function StoryForm({ submitStory, storyData }) {
   const classes = useStyles();
 
   const [newStory, setNewStory] = useState({});
@@ -164,8 +164,7 @@ function StoryForm({ isLoading, error, submitStory }) {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    error: state.error,
+    storyData: state.storyData,
   };
 };
 export default connect(mapStateToProps, { submitStory })(StoryForm);

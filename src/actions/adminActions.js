@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useRef } from 'react';
 
 export const POST_LOGIN_DATA_START = 'POST_LOGIN_DATA_START';
 export const POST_LOGIN_DATA_SUCCESS = 'POST_LOGIN_DATA_SUCCESS';
@@ -12,7 +11,6 @@ export const login = (user) => {
     axios
       .post(`https://refugee-stories-api-082019.herokuapp.com/api/login`, user)
       .then((res) => {
-        console.log(res.data.token, 'res.data.token');
         dispatch({ type: POST_LOGIN_DATA_SUCCESS, payload: res.data.token });
       })
       .catch((err) => {

@@ -3,7 +3,7 @@ import { axiosWithAuth } from '../../utils/axiosWithAuth';
 
 import AdminCard from './AdminCard';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 const AdminsForReview = () => {
   const [admins, setAdmins] = useState([]);

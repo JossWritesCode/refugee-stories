@@ -4,5 +4,5 @@ import { adminReducer } from './adminReducer.js';
 
 export default combineReducers({
   storyData: storyReducer,
-  token: adminReducer,
+  adminData: adminReducer,
 });

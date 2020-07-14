@@ -2,17 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
-import {
-  Avatar,
-  Button,
-  CssBaseline,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  Grid,
-  Container,
-  Typography,
-} from '@material-ui/core';
+import { Button, CssBaseline, Container } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -8,8 +8,7 @@ import {
   Button,
   CssBaseline,
   TextField,
-  FormControlLabel,
-  Checkbox,
+  // Checkbox,
   Grid,
   Container,
   Typography,
@@ -52,19 +51,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AdminSignIn = ({ login, isLoading, error, history, token }) => {
+const AdminSignIn = ({ login, adminData, history }) => {
   //make a post request to retrieve the token from BE
   //set token to local storage
   //navigate user to admin dashboard
   //render a form to allow admin to login
 
   const [userInfo, setUserInfo] = useState({});
-
+  console.log(adminData, 'adminData');
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(adminData, 'adminData');
+
     login(userInfo);
-    console.log('token', token);
-    localStorage.setItem('token', token);
+    console.log(adminData, 'adminData');
+
+    localStorage.setItem('token', adminData.token);
     history.push('/dashboard');
   };
 
@@ -146,9 +148,7 @@ const AdminSignIn = ({ login, isLoading, error, history, token }) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    error: state.error,
-    token: state.token,
+    adminData: state.adminData,
   };
 };
 

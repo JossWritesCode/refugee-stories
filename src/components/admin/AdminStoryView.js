@@ -86,8 +86,9 @@ const AdminStoryView = (props) => {
   };
 
   useEffect(() => {
+    console.log('calling getStory');
     getStory();
-  }, []);
+  }, [getStory]);
 
   return (
     <div className="admin-story-view">
@@ -97,7 +98,7 @@ const AdminStoryView = (props) => {
         <img
           className="story-image"
           width="300px"
-          alt="Photo of author"
+          alt="author"
           src={story.imageUrl}
         />
         <p className="p">by {story.author}</p>
