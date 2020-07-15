@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   headerPrimary: {
     fontFamily: 'Prata',
-    fontSize: '8rem',
+    fontSize: '3rem',
     textAlign: 'center',
   },
   form: {
@@ -67,7 +67,7 @@ function StoryForm({ submitStory, storyData }) {
         <CssBaseline />
         <div className={classes.paper}>
           <Typography
-            classes={classes.headerPrimary}
+            className={classes.headerPrimary}
             component="h1"
             variant="h4"
           >
@@ -139,7 +139,7 @@ function StoryForm({ submitStory, storyData }) {
                   label="Story"
                   type="text"
                   id="story"
-                  multiline="true"
+                  multiline={true}
                   rows="100"
                   onChange={(event) => handleChange(event)}
                 />
