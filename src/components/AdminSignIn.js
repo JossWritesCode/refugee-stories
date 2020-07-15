@@ -67,7 +67,9 @@ const AdminSignIn = ({ login, adminData, history }) => {
     console.log(adminData, 'adminData');
 
     localStorage.setItem('token', adminData.token);
-    history.push('/dashboard');
+    if (!adminData.error) {
+      history.push('/dashboard');
+    }
   };
 
   const handleChange = (event) => {

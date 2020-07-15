@@ -6,6 +6,8 @@ import {
 
 const initialState = {
   token: '',
+  error: false,
+  isloading: false,
 };
 
 export const adminReducer = (state = initialState, action) => {
@@ -13,14 +15,20 @@ export const adminReducer = (state = initialState, action) => {
     case POST_LOGIN_DATA_START:
       return {
         ...state,
+        isLoading: true,
+        error: false,
       };
     case POST_LOGIN_DATA_SUCCESS:
       return {
         ...state,
+        isLoading: false,
+        error: false,
         token: action.payload,
       };
     case POST_LOGIN_DATA_FAILURE:
       return {
+        isLoading: false,
+        error: true,
         ...state,
       };
 
