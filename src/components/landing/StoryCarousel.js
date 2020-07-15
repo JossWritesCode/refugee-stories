@@ -30,8 +30,6 @@ function StoryCarousel({ storyData, getStories }) {
   const classes = useStyles();
   useEffect(() => {
     getStories();
-
-    console.log('CALLING THE API');
   }, [getStories]);
 
   const recentStories = storyData.stories.slice(0, 4);

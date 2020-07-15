@@ -5,7 +5,6 @@ export const POST_LOGIN_DATA_SUCCESS = 'POST_LOGIN_DATA_SUCCESS';
 export const POST_LOGIN_DATA_FAILURE = 'POST_LOGIN_DATA_FAILURE';
 
 export const login = (user) => {
-  console.log('login start');
   return (dispatch) => {
     dispatch({ type: POST_LOGIN_DATA_START });
     axios

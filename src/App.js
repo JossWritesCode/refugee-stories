@@ -33,15 +33,21 @@ function App(props) {
           </Route>
           <Route
             path="/signin"
-            render={(props) => <AdminSignIn {...props} />}
+            render={(props) => (
+              <AdminSignIn match={props.match} history={props.history} />
+            )}
           />
           <Route
             path="/story/:id"
-            render={(props) => <StoryRoute {...props} />}
+            render={(props) => (
+              <StoryRoute match={props.match} history={props.history} />
+            )}
           />
           <Route
             path="/storyform"
-            render={(props) => <StoryForm {...props} />}
+            render={(props) => (
+              <StoryForm match={props.match} history={props.history} />
+            )}
           />
           <PrivateRoute exact path="/dashboard">
             <Dashboard />

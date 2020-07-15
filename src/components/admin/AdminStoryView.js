@@ -86,7 +86,6 @@ const AdminStoryView = (props) => {
   };
 
   useEffect(() => {
-    console.log('calling getStory');
     getStory();
   }, [getStory]);
 

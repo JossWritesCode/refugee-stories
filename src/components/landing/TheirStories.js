@@ -22,7 +22,6 @@ function TheirStories({ storyData, getStories }) {
   const classes = useStyles();
   useEffect(() => {
     getStories();
-    console.log('CALLING THE API');
   }, [getStories, storyData.stories.length]);
 
   return (

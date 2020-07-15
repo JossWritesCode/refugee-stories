@@ -49,7 +49,6 @@ export const submitStory = (newStory) => {
         newStory
       )
       .then((res) => {
-        console.log('posted');
         dispatch({ type: POST_STORY_DATA_SUCCESS, payload: res });
       })
       .catch((err) => {

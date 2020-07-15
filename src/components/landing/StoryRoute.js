@@ -46,7 +46,6 @@ function StoryRoute({ storyData, getStory, match }) {
   const classes = useStyles();
   useEffect(() => {
     getStory(match.params.id);
-    console.log('CALLING THE API');
   }, [getStory, match.params.id]);
 
   return (

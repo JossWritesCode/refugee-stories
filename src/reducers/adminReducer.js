@@ -9,7 +9,6 @@ const initialState = {
 };
 
 export const adminReducer = (state = initialState, action) => {
-  console.log(action, 'action');
   switch (action.type) {
     case POST_LOGIN_DATA_START:
       return {

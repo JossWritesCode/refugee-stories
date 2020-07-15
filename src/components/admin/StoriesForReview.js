@@ -45,7 +45,6 @@ const StoriesForReview = () => {
     axiosWithAuth()
       .get('https://refugee-stories-api-082019.herokuapp.com/api/stories')
       .then((res) => {
-        console.log(res.data);
         const unapprovedStories = res.data.filter((story) => {
           if (story.approved === false) return story;
         });
