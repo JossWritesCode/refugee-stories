@@ -7,7 +7,7 @@ import {
 const initialState = {
   token: '',
   error: false,
-  isloading: false,
+  isLoading: false,
 };
 
 export const adminReducer = (state = initialState, action) => {
