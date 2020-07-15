@@ -44,13 +44,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function StoryForm({ submitStory, storyData }) {
+function StoryForm({ submitStory, storyData, history }) {
   const classes = useStyles();
 
   const [newStory, setNewStory] = useState({});
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(storyData, 'storyData');
+    if (!storyData.error) {
+      history.push('/storyconfirmation');
+    }
     submitStory(newStory);
   };
 

@@ -14,7 +14,7 @@ const initialState = {
   stories: [],
   story: {},
   isLoading: false,
-  error: 'error',
+  error: false,
 };
 
 export const storyReducer = (state = initialState, action) => {
