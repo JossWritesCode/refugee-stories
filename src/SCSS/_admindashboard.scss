@@ -1,14 +1,16 @@
 .dashboard-container {
-  min-height: 100vh;
   main {
-    min-height: 60vh;
+    min-height: 70vh;
   }
 }
 
 .main-dashboard {
   width: 70%;
-  margin: 0 auto;
-  min-height: 100vh;
+  margin: 5rem auto;
+  text-align: center;
+  div {
+    margin-top: 5rem;
+  }
 }
 
 .admin-story-view {

@@ -50,8 +50,15 @@ function App(props) {
             )}
           />
           <PrivateRoute exact path="/dashboard">
-            <Dashboard />
+            <Dashboard {...props} />
           </PrivateRoute>
+          {/* <PrivateRoute
+            exact
+            path="/dashboard"
+            render={(props) => (
+              <Dashboard match={props.match} history={props.history} />
+            )}
+          /> */}
           <PrivateRoute
             exact
             path="/dashboard/story/:id"

@@ -4,12 +4,12 @@ import AdminsForReview from './AdminsForReview';
 import StoriesForReview from './StoriesForReview';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
-import AdminSignOut from '../AdminSignOut';
+// import AdminSignOut from '../AdminSignOut';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   return (
     <div className="dashboard-container">
-      <AdminSignOut />
+      {/* <AdminSignOut {...props} /> */}
       <div className="head">
         <NavBar />
       </div>

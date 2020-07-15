@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function AdminSignOut() {
+function AdminSignOut({ history }) {
   const classes = useStyles();
 
   function signOut() {
@@ -29,7 +29,7 @@ function AdminSignOut() {
   return (
     <React.Fragment>
       <Link to="/">
-        <p className={classes.signOutButton} onClick={signOut}>
+        <p className={classes.signOutButton} onClick={signOut()}>
           Sign Out
         </p>
       </Link>
