@@ -35,9 +35,7 @@ function App(props) {
           </Route>
           <RedirectToDashboardRoute
             path="/signin"
-            render={(props) => (
-              <AdminSignIn match={props.match} history={props.history} />
-            )}
+            render={(props) => <AdminSignIn {...props} />}
           />
           <Route
             path="/story/:id"

@@ -10,7 +10,7 @@ const RedirectToDashboardRoute = ({ component: Component, ...rest }) => {
         if (localStorage.getItem('token')) {
           return <Dashboard match={props.match} history={props.history} />;
         }
-        return <AdminSignIn />;
+        return <AdminSignIn {...props} />;
       }}
     />
   );
