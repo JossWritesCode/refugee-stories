@@ -48,9 +48,10 @@ function App(props) {
               <StoryForm match={props.match} history={props.history} />
             )}
           />
-          <PrivateRoute exact path="/dashboard">
+          {/* <PrivateRoute exact path="/dashboard">
             <Dashboard {...props} />
-          </PrivateRoute>
+          </PrivateRoute> */}
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
           {/* <PrivateRoute
             exact
             path="/dashboard"
