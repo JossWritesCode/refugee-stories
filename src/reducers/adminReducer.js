@@ -5,7 +5,7 @@ import {
 } from '../actions';
 
 const initialState = {
-  token: '',
+  token: null,
   error: false,
   isLoading: false,
 };

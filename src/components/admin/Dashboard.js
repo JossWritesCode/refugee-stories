@@ -7,19 +7,19 @@ import Footer from '../layout/Footer';
 // import AdminSignOut from '../AdminSignOut';
 
 const Dashboard = (props) => {
-  function signOut() {
-    console.log('mayonnaise');
-    localStorage.setItem('token', null);
-  }
+  // function signOut() {
+  //   console.log('mayonnaise');
+  //   localStorage.setItem('token', null);
+  // }
   return (
     <div className="dashboard-container">
       {/* <AdminSignOut {...props} /> */}
       <div className="head">
         <NavBar />
       </div>
-      <a className="sign-out-button" onClick={signOut}>
+      {/* <a className="sign-out-button" onClick={signOut}>
         Sign Out
-      </a>
+      </a> */}
       <main className="main-dashboard">
         <AdminsForReview />
         <StoriesForReview />

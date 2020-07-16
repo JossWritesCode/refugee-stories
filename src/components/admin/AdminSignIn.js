@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../../actions';
 import NavBar from '../layout/NavBar.js';
@@ -65,12 +66,14 @@ const AdminSignIn = ({ login, adminData, history }) => {
 
     login(userInfo);
     console.log(adminData, 'adminData');
+  };
 
-    localStorage.setItem('token', adminData.token);
-    if (!adminData.error) {
+  useEffect(() => {
+    if (!adminData.error && adminData.token) {
+      localStorage.setItem('token', adminData.token);
       history.push('/dashboard');
     }
-  };
+  }, [adminData]);
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -154,4 +157,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { login })(AdminSignIn);
+export default withRouter(connect(mapStateToProps, { login })(AdminSignIn));
