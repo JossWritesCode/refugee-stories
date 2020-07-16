@@ -33,7 +33,15 @@ function TheirStories({ storyData, getStories }) {
         </Typography>
         {storyData.error ? <p className="error">Error</p> : ''}
         {storyData.isLoading ? (
-          <Loader type="TailSpin" color="#00BFFF" height={100} width={100} />
+          <div className="react-spinner">
+            <Loader
+              timeout={5000}
+              type="Rings"
+              color="#C96567"
+              height={100}
+              width={100}
+            />
+          </div>
         ) : (
           ''
         )}

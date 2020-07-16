@@ -57,7 +57,13 @@ function StoryRoute({ storyData, getStory, match }) {
           &#8592;
         </Link>
         {storyData.isLoading ? (
-          <Loader type="TailSpin" color="#c96567" height={100} width={100} />
+          <Loader
+            timeout={5000}
+            type="Rings"
+            color="#C96567"
+            height={100}
+            width={100}
+          />
         ) : (
           ''
         )}

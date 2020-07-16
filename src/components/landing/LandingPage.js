@@ -72,7 +72,13 @@ function LandingPage({ stories, getStories, error, isLoading }) {
         </div>
         <div className="bottom-row">
           {isLoading ? (
-            <Loader type="TailSpin" color="#c96567" height={100} width={100} />
+            <Loader
+              timeout={5000}
+              type="Rings"
+              color="#C96567"
+              height={100}
+              width={100}
+            />
           ) : (
             ''
           )}
