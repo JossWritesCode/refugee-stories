@@ -63,7 +63,6 @@ const AdminSignIn = ({ login, adminData, history }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(adminData, 'adminData');
-
     login(userInfo);
     console.log(adminData, 'adminData');
   };

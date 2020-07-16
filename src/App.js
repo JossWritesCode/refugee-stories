@@ -11,7 +11,6 @@ import StoryForm from './components/submit_stories/StoryForm.js';
 import StoryConfirm from './components/read_stories/StoryConfirm.js';
 import AdminSignIn from './components/admin/AdminSignIn.js';
 import PrivateRoute from './utils/PrivateRoute';
-// import RedirectToDashboardRoute from './utils/RedirectToDashboardRoute';
 import Dashboard from './components/admin/Dashboard';
 import AdminStoryView from './components/admin/AdminStoryView.js';
 
@@ -48,17 +47,9 @@ function App(props) {
               <StoryForm match={props.match} history={props.history} />
             )}
           />
-          {/* <PrivateRoute exact path="/dashboard">
-            <Dashboard {...props} />
-          </PrivateRoute> */}
+
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          {/* <PrivateRoute
-            exact
-            path="/dashboard"
-            render={(props) => (
-              <Dashboard match={props.match} history={props.history} />
-            )}
-          /> */}
+
           <PrivateRoute
             exact
             path="/dashboard/story/:id"
