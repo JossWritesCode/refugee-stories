@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
-import NavBar from '../NavBar.js';
-import Footer from '../Footer.js';
+import NavBar from '../layout/NavBar.js';
+import Footer from '../layout/Footer.js';
 
 //material ui dependencies
 import Button from '@material-ui/core/Button';

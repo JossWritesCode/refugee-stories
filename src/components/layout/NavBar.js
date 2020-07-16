@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Logo from '../assets/pink-logo.png';
+import Logo from '../../assets/pink-logo.png';
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({

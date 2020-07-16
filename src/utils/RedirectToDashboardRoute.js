@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Dashboard from '../components/admin/Dashboard';
-import AdminSignIn from '../components/AdminSignIn';
+import AdminSignIn from '../components/admin/AdminSignIn';
 const RedirectToDashboardRoute = ({ component: Component, ...rest }) => {
   return (
     <Route

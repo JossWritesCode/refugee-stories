@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../actions';
-import NavBar from './NavBar.js';
-import Footer from './Footer.js';
+import { login } from '../../actions';
+import NavBar from '../layout/NavBar.js';
+import Footer from '../layout/Footer.js';
 import {
   Avatar,
   Button,

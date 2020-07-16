@@ -1,8 +1,8 @@
 import React from 'react';
-import NavBar from '../NavBar.js';
+import NavBar from '../layout/NavBar.js';
 import { makeStyles } from '@material-ui/core/styles';
-import BackButton from '../BackButton';
-import Footer from '../Footer';
+import BackButton from '../layout/BackButton';
+import Footer from '../layout/Footer';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,

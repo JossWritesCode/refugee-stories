@@ -3,7 +3,7 @@ import { Carousel } from 'antd';
 import { makeStyles } from '@material-ui/core/styles';
 import { getStories } from '../../actions';
 import { connect } from 'react-redux';
-import Story from './Story.js';
+import Story from '../read_stories/Story.js';
 import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 

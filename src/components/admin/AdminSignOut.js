@@ -21,9 +21,8 @@ const useStyles = makeStyles((theme) => ({
 
 function AdminSignOut({ history }) {
   const classes = useStyles();
-
   function signOut() {
-    localStorage.setItem('token', '');
+    localStorage.setItem('token', null);
   }
 
   return (

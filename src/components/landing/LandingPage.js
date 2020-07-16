@@ -1,8 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import NavBar from '../NavBar.js';
+import NavBar from '../layout/NavBar.js';
 import { Typography, Button } from '@material-ui/core';
-import Footer from '../Footer.js';
+import Footer from '../layout/Footer.js';
 import { Link } from 'react-router-dom';
 import Loader from 'react-loader-spinner';
 import { getStories } from '../../actions';

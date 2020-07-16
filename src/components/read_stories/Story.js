@@ -7,13 +7,13 @@ import {
   CardContent,
   CardMedia,
   Button,
-  Typography
+  Typography,
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
   root: {
     // width: '500px'
-  }
+  },
 });
 
 export default function Story(props) {

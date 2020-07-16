@@ -8,11 +8,11 @@ import {
   Typography,
   Container,
 } from '@material-ui/core';
-import BackButton from './BackButton';
-import NavBar from './NavBar.js';
+import BackButton from '../layout/BackButton';
+import NavBar from '../layout/NavBar.js';
 import { makeStyles } from '@material-ui/core/styles';
-import Footer from './Footer.js';
-import { submitStory } from '../actions';
+import Footer from '../layout/Footer.js';
+import { submitStory } from '../../actions';
 
 const useStyles = makeStyles((theme) => ({
   paper: {

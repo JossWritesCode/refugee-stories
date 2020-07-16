@@ -5,8 +5,8 @@ import { getStories } from '../../actions';
 import { connect } from 'react-redux';
 import Story from './Story.js';
 import { Typography } from '@material-ui/core';
-import NavBar from '../NavBar.js';
-import Footer from '../Footer.js';
+import NavBar from '../layout/NavBar.js';
+import Footer from '../layout/Footer.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
