@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.8rem',
+      width: '40%',
     },
   },
 
