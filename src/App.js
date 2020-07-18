@@ -13,7 +13,7 @@ import AdminSignIn from './components/admin/AdminSignIn.js';
 import PrivateRoute from './utils/PrivateRoute';
 import Dashboard from './components/admin/Dashboard';
 import AdminStoryView from './components/admin/AdminStoryView.js';
-
+import AdminApply from './components/admin/AdminApply';
 //components
 
 //contexts
@@ -45,6 +45,12 @@ function App(props) {
             path="/storyform"
             render={(props) => (
               <StoryForm match={props.match} history={props.history} />
+            )}
+          />
+          <Route
+            path="/apply"
+            render={(props) => (
+              <AdminApply match={props.match} history={props.history} />
             )}
           />
 
