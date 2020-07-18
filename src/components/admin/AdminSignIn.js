@@ -51,6 +51,11 @@ const useStyles = makeStyles((theme) => ({
   textField: {
     marginTop: '2rem',
   },
+  link: {
+    '&:hover': {
+      color: theme.palette.secondary.main,
+    },
+  },
 }));
 
 const AdminSignIn = ({ login, adminData, history }) => {
@@ -139,7 +144,7 @@ const AdminSignIn = ({ login, adminData, history }) => {
           </Button>
           <Grid container>
             <Grid item>
-              <Link to="/apply" variant="body2">
+              <Link className={classes.link} to="/apply" variant="body2">
                 {'Want to be an admin? Apply here'}
               </Link>
             </Grid>

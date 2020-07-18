@@ -12,7 +12,7 @@ import BackButton from '../layout/BackButton';
 import NavBar from '../layout/NavBar.js';
 import { makeStyles } from '@material-ui/core/styles';
 import Footer from '../layout/Footer.js';
-import { submitStory } from '../../actions';
+import { apply } from '../../actions';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -46,23 +46,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function StoryForm({ submitStory, storyData, history }) {
+function StoryForm({ apply, history }) {
   const classes = useStyles();
 
-  const [newStory, setNewStory] = useState({});
+  const [userData, setUserData] = useState({});
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(storyData, 'storyData');
-    if (!storyData.error) {
-      history.push('/storyconfirmation');
-    }
-    submitStory(newStory);
+    apply(userData);
   };
 
   const handleChange = (event) => {
     event.preventDefault();
-    setNewStory({ ...newStory, [event.target.name]: event.target.value });
+    setUserData({ ...userData, [event.target.name]: event.target.value });
   };
 
   return (
@@ -159,6 +154,4 @@ const mapStateToProps = (state) => {
     storyData: state.storyData,
   };
 };
-export default connect(mapStateToProps, { submitStory })(StoryForm);
-
-// https://refugee-stories-api-082019.herokuapp.com/api/public
+export default connect(mapStateToProps, { apply })(StoryForm);

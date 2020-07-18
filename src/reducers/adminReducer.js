@@ -2,6 +2,9 @@ import {
   POST_LOGIN_DATA_START,
   POST_LOGIN_DATA_SUCCESS,
   POST_LOGIN_DATA_FAILURE,
+  // APPLY_ADMIN_START,
+  // APPLY_ADMIN_SUCCESS,
+  // APPLY_ADMIN_FAILURE,
 } from '../actions';
 
 const initialState = {
