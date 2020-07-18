@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../../actions';
+
 import NavBar from '../layout/NavBar.js';
 import Footer from '../layout/Footer.js';
 import {
@@ -138,9 +139,9 @@ const AdminSignIn = ({ login, adminData, history }) => {
           </Button>
           <Grid container>
             <Grid item>
-              {/* <Link href="#" variant="body2">
+              <Link to="/apply" variant="body2">
                 {'Want to be an admin? Apply here'}
-              </Link> */}
+              </Link>
             </Grid>
           </Grid>
         </form>
