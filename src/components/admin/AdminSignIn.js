@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../../actions';
-
+import BackButton from '../layout/BackButton';
 import NavBar from '../layout/NavBar.js';
 import Footer from '../layout/Footer.js';
 import {
@@ -89,6 +89,7 @@ const AdminSignIn = ({ login, adminData, history }) => {
   return (
     <Container className={classes.root} component="main" maxWidth="xs">
       <NavBar />
+      <BackButton link="/" />
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>

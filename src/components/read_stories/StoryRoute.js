@@ -51,11 +51,8 @@ function StoryRoute({ storyData, getStory, match }) {
   return (
     <div>
       <NavBar />
-      <BackButton />
+      <BackButton link="/stories" />
       <div className="story-container">
-        <Link className={classes.backButton} to="/stories">
-          &#8592;
-        </Link>
         {storyData.isLoading ? (
           <Loader
             timeout={5000}

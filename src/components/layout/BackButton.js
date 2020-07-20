@@ -9,8 +9,8 @@ const useStyles = makeStyles((theme) => ({
 
   backButton: {
     position: 'absolute',
-    top: '20%',
-    left: '20%',
+    top: '15%',
+    left: '8%',
     fontFamily: 'Prata',
     fontSize: '2.4rem',
     '&:hover': {
@@ -19,12 +19,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function BackButton() {
+function BackButton(props) {
   const classes = useStyles();
 
   return (
     <React.Fragment>
-      <Link className={classes.backButton} to="/stories">
+      <Link className={classes.backButton} to={props.link}>
         &#8592;
       </Link>
     </React.Fragment>

@@ -66,7 +66,7 @@ function StoryForm({ submitStory, storyData, history }) {
   return (
     <>
       <NavBar />
-      <BackButton />
+      <BackButton link="/" />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>

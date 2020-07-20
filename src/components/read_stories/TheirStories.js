@@ -7,7 +7,7 @@ import Story from './Story.js';
 import { Typography } from '@material-ui/core';
 import NavBar from '../layout/NavBar.js';
 import Footer from '../layout/Footer.js';
-
+import BackButton from '../layout/BackButton.js';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -27,6 +27,7 @@ function TheirStories({ storyData, getStories }) {
   return (
     <div className="their-stories">
       <NavBar />
+      <BackButton link="/" />
       <main className="main-their-stories">
         <Typography className={classes.title} variant="h3">
           Their Stories

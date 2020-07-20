@@ -27,7 +27,7 @@ function StoryConfirm() {
   return (
     <div className={classes.root}>
       <NavBar />
-      <BackButton />
+      <BackButton link="/" />
       <main className={classes.main}>
         <div className={classes.thanks}>
           <h1 className="h1">Thank you!</h1>
