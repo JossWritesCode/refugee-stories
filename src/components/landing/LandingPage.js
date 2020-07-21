@@ -65,10 +65,18 @@ function LandingPage({ stories, getStories, error, isLoading }) {
                 Share Your Story
               </Button>
             </Link>
+
             <Typography className={classes.headerSecondary} component="p">
               “Could a greater miracle take place than for us to look through
               each other’s eye for an instant?” - Henry David Thoreau
             </Typography>
+            {/* <Typography
+              style={{ textAlign: 'center' }}
+              className={classes.headerSecondary}
+              component="p"
+            >
+              A space for displaced people to share their stories.
+            </Typography> */}
           </div>
         </div>
         <div className="bottom-row">
