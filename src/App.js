@@ -4,6 +4,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './components/ui/Theme';
 import { Switch, Route } from 'react-router-dom';
 import LandingPage from './components/landing/LandingPage.js';
+import AdminConfirm from './components/admin/AdminConfirm';
 import TheirStories from './components/read_stories/TheirStories.js';
 import './SCSS/main.scss';
 import StoryRoute from './components/read_stories/StoryRoute.js';
@@ -31,6 +32,10 @@ function App(props) {
           </Route>
           <Route path="/storyconfirmation">
             <StoryConfirm />
+          </Route>
+
+          <Route path="/adminconfirmation">
+            <AdminConfirm />
           </Route>
           <Route path="/signin">
             <AdminSignIn {...props} />

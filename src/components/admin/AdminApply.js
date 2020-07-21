@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function AdminApply() {
+function AdminApply({ history }) {
   const classes = useStyles();
 
   const [userData, setUserData] = useState({});
@@ -59,14 +59,14 @@ function AdminApply() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('hello');
+
     axios
       .post(
         'https://refugee-stories-api-082019.herokuapp.com/api/register',
         userData
       )
       .then((res) => {
-        console.log(res, 'res');
+        history.push('/adminconfirmation');
       })
       .catch((err) => {
         console.log(err, 'err');
