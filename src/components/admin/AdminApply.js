@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+
+import axios from 'axios';
 import {
   Button,
   CssBaseline,
@@ -12,7 +13,6 @@ import BackButton from '../layout/BackButton';
 import NavBar from '../layout/NavBar.js';
 import { makeStyles } from '@material-ui/core/styles';
 import Footer from '../layout/Footer.js';
-import { apply } from '../../actions';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -42,22 +42,35 @@ const useStyles = makeStyles((theme) => ({
   story: {
     height: 250,
     width: 400,
+
     labelOffset: -20,
   },
 }));
 
-function StoryForm({ apply, history }) {
+function AdminApply() {
   const classes = useStyles();
 
   const [userData, setUserData] = useState({});
 
-  const handleSubmit = (event) => {
-    apply(userData);
-  };
-
   const handleChange = (event) => {
     event.preventDefault();
     setUserData({ ...userData, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('hello');
+    axios
+      .post(
+        'https://refugee-stories-api-082019.herokuapp.com/api/register',
+        userData
+      )
+      .then((res) => {
+        console.log(res, 'res');
+      })
+      .catch((err) => {
+        console.log(err, 'err');
+      });
   };
 
   return (
@@ -149,9 +162,4 @@ function StoryForm({ apply, history }) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    storyData: state.storyData,
-  };
-};
-export default connect(mapStateToProps, { apply })(StoryForm);
+export default AdminApply;
