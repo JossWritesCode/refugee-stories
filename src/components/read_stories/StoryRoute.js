@@ -8,7 +8,8 @@ import BackButton from '../layout/BackButton';
 import Loader from 'react-loader-spinner';
 import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
+import DeleteIcon from '@material-ui/icons/Delete';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -40,14 +41,41 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.secondary.main,
     },
   },
+  delete: {
+    fill: 'red',
+    fontSize: '5.2rem',
+    position: 'absolute',
+    top: '65%',
+    left: '10%',
+    cursor: 'pointer',
+    '&:hover': {
+      fill: 'darkred',
+    },
+  },
 }));
 
-function StoryRoute({ storyData, getStory, match, adminData }) {
+function StoryRoute({ storyData, getStory, match, adminData, history }) {
   const classes = useStyles();
+
+  const id = match.params.id;
+
+  let isAdmin = adminData.isAdmin;
   useEffect(() => {
     console.log(adminData);
-    getStory(match.params.id);
-  }, [getStory, match.params.id]);
+    getStory(id);
+  }, [getStory, id]);
+
+  const deleteStory = () => {
+    axiosWithAuth()
+      .delete(
+        `https://refugee-stories-api-082019.herokuapp.com/api/stories/${id}`
+      )
+      .then((res) => {
+        console.log('DELETE', res);
+        history.push('/');
+      })
+      .catch((error) => console.log(error.response));
+  };
 
   return (
     <div>
@@ -89,6 +117,12 @@ function StoryRoute({ storyData, getStory, match, adminData }) {
           {storyData.story.story}
         </Typography>
       </div>
+
+      {isAdmin ? (
+        <button onClick={() => deleteStory()}>
+          <DeleteIcon className={classes.delete} />
+        </button>
+      ) : null}
       <Footer />
     </div>
   );
