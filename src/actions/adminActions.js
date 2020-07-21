@@ -4,10 +4,6 @@ export const POST_LOGIN_DATA_START = 'POST_LOGIN_DATA_START';
 export const POST_LOGIN_DATA_SUCCESS = 'POST_LOGIN_DATA_SUCCESS';
 export const POST_LOGIN_DATA_FAILURE = 'POST_LOGIN_DATA_FAILURE';
 
-// export const APPLY_ADMIN_START = 'APPLY_ADMIN_START';
-// export const APPLY_ADMIN_SUCCESS = 'APPLY_ADMIN_SUCCESS';
-// export const APPLY_ADMIN_FAILURE = 'APPLY_ADMIN_FAILURE';
-
 export const login = (user) => {
   return (dispatch) => {
     dispatch({ type: POST_LOGIN_DATA_START });

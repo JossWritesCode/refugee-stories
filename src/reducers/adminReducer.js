@@ -2,15 +2,13 @@ import {
   POST_LOGIN_DATA_START,
   POST_LOGIN_DATA_SUCCESS,
   POST_LOGIN_DATA_FAILURE,
-  // APPLY_ADMIN_START,
-  // APPLY_ADMIN_SUCCESS,
-  // APPLY_ADMIN_FAILURE,
 } from '../actions';
 
 const initialState = {
   token: null,
   error: false,
   isLoading: false,
+  isAdmin: false,
 };
 
 export const adminReducer = (state = initialState, action) => {
@@ -20,6 +18,7 @@ export const adminReducer = (state = initialState, action) => {
         ...state,
         isLoading: true,
         error: false,
+        isAdmin: false,
       };
     case POST_LOGIN_DATA_SUCCESS:
       return {
@@ -27,12 +26,14 @@ export const adminReducer = (state = initialState, action) => {
         isLoading: false,
         error: false,
         token: action.payload,
+        isAdmin: true,
       };
     case POST_LOGIN_DATA_FAILURE:
       return {
+        ...state,
         isLoading: false,
         error: true,
-        ...state,
+        isAdmin: false,
       };
 
     default:

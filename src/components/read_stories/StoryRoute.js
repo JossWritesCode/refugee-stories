@@ -42,9 +42,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function StoryRoute({ storyData, getStory, match }) {
+function StoryRoute({ storyData, getStory, match, adminData }) {
   const classes = useStyles();
   useEffect(() => {
+    console.log(adminData);
     getStory(match.params.id);
   }, [getStory, match.params.id]);
 
@@ -96,6 +97,7 @@ function StoryRoute({ storyData, getStory, match }) {
 const mapStateToProps = (state) => {
   return {
     storyData: state.storyData,
+    adminData: state.adminData,
   };
 };
 export default connect(mapStateToProps, { getStory })(StoryRoute);
