@@ -4,7 +4,7 @@ Refugee Stories gives displaced people a platform to share their stories. It als
 
 ## Getting Started
 
-Live here: https://readrefugeestories.netlify.com
+Live here: https://refugee-stories.netlify.app/
 
 ## Built With
 
