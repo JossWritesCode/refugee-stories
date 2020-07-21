@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import BlockIcon from '@material-ui/icons/Block';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { makeStyles } from '@material-ui/core/styles';
-
+import BackButton from '../layout/BackButton';
 const useStyles = makeStyles((theme) => ({
   reject: {
     backgroundColor: 'red',
@@ -91,6 +91,7 @@ const AdminStoryView = (props) => {
   return (
     <div className="admin-story-view">
       <NavBar />
+      <BackButton link="/dashboard" />
       <div className="story-card">
         <h4>{story.title}</h4>
         <img
