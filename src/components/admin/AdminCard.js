@@ -8,27 +8,35 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   reject: {
-    backgroundColor: '#c96567',
+    backgroundColor: 'red',
     border: 0,
     borderRadius: 5,
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     color: 'white',
-    height: 48,
-    padding: '0 50px',
+    height: '2.4rem',
+    padding: '0 20px',
     marginTop: '2rem',
-    fontSize: 17,
+    fontSize: '1.4rem',
+    textTransform: 'none',
+    '&:hover': {
+      backgroundColor: 'darkred',
+    },
   },
   approve: {
-    backgroundColor: 'seagreen',
+    backgroundColor: 'green',
     border: 0,
     borderRadius: 5,
     boxShadow: '0 3px 5px 2px rgba(136, 223, 145, .3)',
     color: 'white',
-    height: 48,
-    padding: '0 50px',
+    height: '2.4rem',
+    padding: '0 20px',
     marginRight: '2rem',
     marginTop: '2rem',
-    fontSize: 17,
+    fontSize: '1.4rem',
+    textTransform: 'none',
+    '&:hover': {
+      backgroundColor: 'darkgreen',
+    },
   },
 }));
 

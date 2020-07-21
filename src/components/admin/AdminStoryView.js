@@ -12,36 +12,35 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   reject: {
     backgroundColor: 'red',
-    '&:hover': {
-      backgroundColor: 'darkred',
-    },
     border: 0,
     borderRadius: 5,
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     color: 'white',
-    height: 48,
-    padding: '0 50px',
+    height: '2.4rem',
+    padding: '0 20px',
     marginTop: '2rem',
-    fontSize: 17,
-    width: '19rem',
-    // padding: theme.spacing(3),
+    fontSize: '1.4rem',
+    width: '13rem',
+    textTransform: 'none',
+    '&:hover': {
+      backgroundColor: 'darkred',
+    },
   },
   approve: {
     backgroundColor: 'green',
-    '&:hover': {
-      backgroundColor: 'darkgreen',
-    },
-    width: '19rem',
     border: 0,
     borderRadius: 5,
     boxShadow: '0 3px 5px 2px rgba(136, 223, 145, .3)',
     color: 'white',
-    height: 48,
-    padding: '0 50px',
-
+    height: '2.4rem',
+    padding: '0 20px',
     marginTop: '2rem',
-    fontSize: 17,
-    // padding: theme.spacing(3),
+    fontSize: '1.4rem',
+    width: '13rem',
+    textTransform: 'none',
+    '&:hover': {
+      backgroundColor: 'darkgreen',
+    },
   },
 }));
 

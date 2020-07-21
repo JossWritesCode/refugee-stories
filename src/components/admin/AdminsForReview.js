@@ -82,7 +82,7 @@ const AdminsForReview = () => {
   return (
     <div>
       <Typography component="h2" className={classes.headerSecondary}>
-        New Administrators for Your Review
+        New Administrators for Review
       </Typography>
       <div>
         {admins.length > 0 ? (

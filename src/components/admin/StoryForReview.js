@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '0',
     padding: '0',
     minHeight: '100vh',
+    textTransform: 'none',
   },
   paper: {
     marginTop: theme.spacing(8),
@@ -23,6 +24,19 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    color: 'white',
+    border: 0,
+    borderRadius: 5,
+    boxShadow: '0 3px 5px 2px rgba(136, 223, 145, .3)',
+    height: '2.4rem',
+    padding: '0 20px',
+    marginRight: '2rem',
+    marginTop: '2rem',
+    fontSize: '1.4rem',
+    textTransform: 'none',
+    '&:hover': {
+      backgroundColor: '#01021a',
+    },
   },
 }));
 
@@ -38,8 +52,8 @@ const StoryCard = (props) => {
           type="submit"
           width="100px"
           variant="contained"
-          color="secondary"
           className={classes.submit}
+          color="primary"
         >
           Review Story
         </Button>

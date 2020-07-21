@@ -56,7 +56,7 @@ const StoriesForReview = () => {
   return (
     <div className="container">
       <Typography component="h2" className={classes.headerSecondary}>
-        New Stories for Your Review
+        New Stories for Review
       </Typography>
       <div className="pending-stories-display">
         {stories.length > 0 ? (
