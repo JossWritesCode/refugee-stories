@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import NavBar from '../layout/NavBar.js';
 import Footer from '../layout/Footer.js';
-
+import BackButton from '../layout/BackButton';
 //material ui dependencies
 import Button from '@material-ui/core/Button';
 import BlockIcon from '@material-ui/icons/Block';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import { makeStyles } from '@material-ui/core/styles';
-import BackButton from '../layout/BackButton';
 const useStyles = makeStyles((theme) => ({
   reject: {
     backgroundColor: 'red',
@@ -74,19 +73,20 @@ const AdminStoryView = (props) => {
       .catch((error) => console.log(error.response));
   };
 
-  const getStory = () => {
-    axiosWithAuth()
-      .get(`https://refugee-stories-api-082019.herokuapp.com/api/stories/${id}`)
-      .then((res) => {
-        //console.log('ADMIN REQUEST', res);
-        setStory(res.data);
-      })
-      .catch((error) => console.log(error.response));
-  };
-
   useEffect(() => {
+    const getStory = () => {
+      axiosWithAuth()
+        .get(
+          `https://refugee-stories-api-082019.herokuapp.com/api/stories/${id}`
+        )
+        .then((res) => {
+          //console.log('ADMIN REQUEST', res);
+          setStory(res.data);
+        })
+        .catch((error) => console.log(error.response));
+    };
     getStory();
-  }, [getStory]);
+  }, [id]);
 
   return (
     <div className="admin-story-view">

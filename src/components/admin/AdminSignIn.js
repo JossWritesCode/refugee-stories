@@ -78,7 +78,7 @@ const AdminSignIn = ({ login, adminData, history }) => {
       localStorage.setItem('token', adminData.token);
       history.push('/dashboard');
     }
-  }, [adminData]);
+  }, [adminData, history]);
 
   const handleChange = (event) => {
     event.preventDefault();

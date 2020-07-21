@@ -7,7 +7,6 @@ import Footer from '../layout/Footer.js';
 import BackButton from '../layout/BackButton';
 import Loader from 'react-loader-spinner';
 import { Typography } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 import { axiosWithAuth } from '../../utils/axiosWithAuth';
 import DeleteIcon from '@material-ui/icons/Delete';
 const useStyles = makeStyles((theme) => ({
@@ -61,9 +60,8 @@ function StoryRoute({ storyData, getStory, match, adminData, history }) {
 
   let isAdmin = adminData.isAdmin;
   useEffect(() => {
-    console.log(adminData);
     getStory(id);
-  }, [getStory, id]);
+  }, [getStory, isAdmin, id]);
 
   const deleteStory = () => {
     axiosWithAuth()

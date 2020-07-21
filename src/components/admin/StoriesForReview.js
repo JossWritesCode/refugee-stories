@@ -46,7 +46,11 @@ const StoriesForReview = () => {
       .get('https://refugee-stories-api-082019.herokuapp.com/api/stories')
       .then((res) => {
         const unapprovedStories = res.data.filter((story) => {
-          if (story.approved === false) return story;
+          if (story.approved === false) {
+            return story;
+          } else {
+            return null;
+          }
         });
         setStories(unapprovedStories);
       })
