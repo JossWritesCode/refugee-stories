@@ -51,7 +51,6 @@ function StoryForm({ submitStory, storyData, history }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(storyData, 'storyData');
     if (!storyData.error) {
       history.push('/storyconfirmation');
     }

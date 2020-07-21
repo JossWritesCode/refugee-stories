@@ -10,7 +10,6 @@ export const login = (user) => {
     axios
       .post(`https://refugee-stories-api-082019.herokuapp.com/api/login`, user)
       .then((res) => {
-        console.log(user, 'user');
         dispatch({ type: POST_LOGIN_DATA_SUCCESS, payload: res.data.token });
       })
       .catch((err) => {

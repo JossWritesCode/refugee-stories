@@ -65,12 +65,10 @@ const AdminSignIn = ({ login, adminData, history }) => {
   //render a form to allow admin to login
 
   const [userInfo, setUserInfo] = useState({});
-  console.log(adminData, 'adminData');
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(adminData, 'adminData');
+
     login(userInfo);
-    console.log(adminData, 'adminData');
   };
 
   useEffect(() => {

@@ -69,7 +69,6 @@ function StoryRoute({ storyData, getStory, match, adminData, history }) {
         `https://refugee-stories-api-082019.herokuapp.com/api/stories/${id}`
       )
       .then((res) => {
-        console.log('DELETE', res);
         history.push('/');
       })
       .catch((error) => console.log(error.response));

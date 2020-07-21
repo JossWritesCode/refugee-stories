@@ -7,10 +7,6 @@ import Footer from '../layout/Footer';
 // import AdminSignOut from '../AdminSignOut';
 
 const Dashboard = (props) => {
-  // function signOut() {
-  //   console.log('mayonnaise');
-  //   localStorage.setItem('token', null);
-  // }
   return (
     <div className="dashboard-container">
       {/* <AdminSignOut {...props} /> */}

@@ -12,7 +12,6 @@ const AdminsForReview = () => {
     axiosWithAuth()
       .get('https://refugee-stories-api-082019.herokuapp.com/api/users/pending')
       .then((res) => {
-        console.log(res);
         setAdmins(res.data);
       })
       .catch((error) => console.log(error.response));
@@ -28,7 +27,6 @@ const AdminsForReview = () => {
         `https://refugee-stories-api-082019.herokuapp.com/api/users/${id}`
       )
       .then((res) => {
-        console.log('DELETE', res);
         getAdmins(); // fetch admins to update list
       })
       .catch((error) => console.log(error.response));
@@ -38,7 +36,6 @@ const AdminsForReview = () => {
     axiosWithAuth()
       .put(`https://refugee-stories-api-082019.herokuapp.com/api/users/${id}`)
       .then((res) => {
-        console.log('APPROVE', res);
         getAdmins(); // fetch admins to update list
       })
       .catch((error) => console.log(error.response));
